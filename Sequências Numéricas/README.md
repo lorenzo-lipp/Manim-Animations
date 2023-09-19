@@ -1,35 +1,23 @@
 ## Introduction
 
-<video width="480" height="720" controls>
-  <source src="./final_files/Introduction.mp4" type="video/mp4">
-</video>
+<img src="./final_files/Introduction.gif" height="720px">
 
 ## Sum Pattern
 
-<video width="480" height="720" controls>
-  <source src="./final_files/SumPattern.mp4" type="video/mp4">
-</video>
+<img src="./final_files/SumPattern.gif" height="720px">
 
 ## Multiply Pattern
 
-<video width="480" height="720" controls>
-  <source src="./final_files/MultiplyPattern.mp4" type="video/mp4">
-</video>
+<img src="./final_files/MultiplyPattern.gif" height="720px">
 
 ## Fibonacci Pattern
 
-<video width="480" height="720" controls>
-  <source src="./final_files/FibonacciPattern.mp4" type="video/mp4">
-</video>
+<img src="./final_files/FibonacciPattern.gif" height="720px">
 
 ## Fibonacci Spiral
 
-<video width="480" height="720" controls>
-  <source src="./final_files/FibonacciSpiral.mp4" type="video/mp4">
-</video>
+<img src="./final_files/FibonacciSpiral.gif" height="720px">
 
 ## Logo
 
-<video width="480" height="720" controls>
-  <source src="./final_files/Logo.mp4" type="video/mp4">
-</video>
+<img src="./final_files/Logo.gif" height="720px">
