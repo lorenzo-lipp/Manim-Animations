@@ -28,6 +28,6 @@ class QuestionTwo(Scene):
             text.animate.shift(9 * RIGHT), 
             run_time=0.7
         )
-        self.wait(1.5)
+        self.wait(2)
         self.play(Group(*self.mobjects).animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)

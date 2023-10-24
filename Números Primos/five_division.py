@@ -31,6 +31,8 @@ class FiveDivision(Scene):
             by_five
         )
         divisions.arrange(DOWN, buff=1)
+        square1 = SurroundingRectangle(by_one, color=LIGHT_RED_COLOR)
+        square2 = SurroundingRectangle(by_five, color=LIGHT_RED_COLOR)
 
         self.play(LaggedStart(
             FadeIn(by_one), 
@@ -43,10 +45,16 @@ class FiveDivision(Scene):
         ))
         self.wait(1)
         self.play(LaggedStart(
-            Circumscribe(by_one, color=LIGHT_RED_COLOR),
-            Circumscribe(by_five, color=LIGHT_RED_COLOR),
-            lag_ratio=0.5,
-            run_time=2
+            Create(square1),
+            Create(square2),
+            lag_ratio=0.3,
+            run_time=1.5
         ))
-        self.play(FadeOut(divisions), run_time=0.5)
+        self.wait(2)
+        self.play(
+            FadeOut(square1), 
+            FadeOut(square2), 
+            FadeOut(divisions), 
+            run_time=0.5
+        )
         self.wait(0.5)

@@ -36,6 +36,10 @@ class SixDivision(Scene):
             ).arrange(RIGHT, buff=1)
         )
         divisions.arrange(DOWN, buff=1)
+        square1 = SurroundingRectangle(by_one, color=LIGHT_RED_COLOR)
+        square2 = SurroundingRectangle(by_two, color=LIGHT_RED_COLOR)
+        square3 = SurroundingRectangle(by_three, color=LIGHT_RED_COLOR)
+        square4 = SurroundingRectangle(by_six, color=LIGHT_RED_COLOR)
 
         self.play(LaggedStart(
             FadeIn(by_one), 
@@ -49,12 +53,20 @@ class SixDivision(Scene):
         ))
         self.wait(1)
         self.play(LaggedStart(
-            Circumscribe(by_one, color=LIGHT_RED_COLOR),
-            Circumscribe(by_two, color=LIGHT_RED_COLOR),
-            Circumscribe(by_three, color=LIGHT_RED_COLOR),
-            Circumscribe(by_six, color=LIGHT_RED_COLOR),
+            Create(square1),
+            Create(square2),
+            Create(square3),
+            Create(square4),
             lag_ratio=0.3,
             run_time=2.5
         ))
-        self.play(FadeOut(divisions), run_time=0.5)
+        self.wait(2.5)
+        self.play(
+            FadeOut(square1), 
+            FadeOut(square2), 
+            FadeOut(square3), 
+            FadeOut(square4), 
+            FadeOut(divisions), 
+            run_time=0.5
+        )
         self.wait(0.5)
