@@ -22,6 +22,10 @@
 
 <img src="./final_files/SmallerPrime.gif" height="720px">
 
+## Ten Primes
+
+<img src="./final_files/TenPrimes.gif" height="720px">
+
 ## How Many Primes
 
 <img src="./final_files/HowManyPrimes.gif" height="720px">

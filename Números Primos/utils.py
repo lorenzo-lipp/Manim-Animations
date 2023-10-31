@@ -53,3 +53,10 @@ def Division(numerator, denominator):
     gp[1][2].shift(0.3 * UP + 0.22 * RIGHT)
 
     return gp
+
+def is_prime(num):
+    for i in range(2, num):
+        if (num % i == 0):
+            return False
+        
+    return True
