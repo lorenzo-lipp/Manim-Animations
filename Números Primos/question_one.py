@@ -35,19 +35,26 @@ class QuestionOne(Scene):
         text_2 = VGroup(
             Text("São números que", color=WHITE),
             Text("têm somente dois", color=WHITE),
-            Text("divisores.", color=WHITE)
+            Text("divisores,", color=WHITE)
         )
         text_2.scale(0.6)
         text_2.arrange(DOWN, buff=0.1)
         text_2.shift(3.03 * UP + 8 * RIGHT)
         text_2[2].shift(0.1 * DOWN)
         text_3 = VGroup(
+            Text("1 e ele", color=WHITE),
+            Text("mesmo.", color=WHITE)
+        )
+        text_3.scale(0.6)
+        text_3.arrange(DOWN, buff=0.3)
+        text_3.shift(3.03 * UP + LEFT)
+        text_4 = VGroup(
             Text("O número cinco", color=WHITE),
             Text("é primo?", color=WHITE)
         )
-        text_3.scale(0.6)
-        text_3.arrange(DOWN, buff=0.2)
-        text_3.shift(3 * UP + 8 * RIGHT)
+        text_4.scale(0.6)
+        text_4.arrange(DOWN, buff=0.2)
+        text_4.shift(3 * UP + 8 * RIGHT)
 
         self.play(
             animal_1.animate.shift(7 * RIGHT), 
@@ -67,19 +74,25 @@ class QuestionOne(Scene):
         )
         self.wait(2.5)
         self.play(
+            FadeOut(text_2),
+            FadeIn(text_3), 
+            run_time=0.5
+        )
+        self.wait(2.5)
+        self.play(
             animal_2.animate.shift(9 * LEFT), 
             speech_2.animate.shift(9 * LEFT), 
-            text_2.animate.shift(9 * LEFT), 
+            text_3.animate.shift(9 * LEFT), 
             animal_3.animate.shift(7 * LEFT), 
             speech_3.animate.shift(9 * LEFT), 
-            text_3.animate.shift(9 * LEFT), 
+            text_4.animate.shift(9 * LEFT), 
             run_time=0.7
         )
         self.wait(2.5)
         self.play(
             animal_3.animate.shift(9 * LEFT), 
             speech_3.animate.shift(8 * LEFT), 
-            text_3.animate.shift(8 * LEFT), 
+            text_4.animate.shift(8 * LEFT), 
             run_time=0.7
         )
         self.remove(*self.mobjects)
