@@ -16,6 +16,6 @@ class EquivalentFractions(Scene):
         ).scale(2).arrange(RIGHT, buff=1)
 
         self.play(Write(fractions), run_time=0.5)
-        self.wait(2)
-        self.play(FadeOut(fractions), run_time=0.7)
+        self.wait(1)
+        self.play(fractions.animate.scale(0), run_time=0.5)
         self.remove(*self.mobjects)

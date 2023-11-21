@@ -40,6 +40,6 @@ class EquivalentPizzas(Scene):
             SpinInFromNothing(three_out_of_six),
             lag_ratio=0.5
         ))
-        self.wait(3)
+        self.wait(2)
         self.play(AnimateToLeft(*self.mobjects), run_time=0.7)
         self.remove(*self.mobjects)

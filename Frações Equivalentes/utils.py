@@ -147,7 +147,7 @@ def BigCracker(opacity_arr=[1, 1, 1]):
 def GrayCracker():
     return SmallCracker().set(color=LIGHT_GRAY)
 
-def AnimateFromRight(*mobjects):
+def AnimateFromLeft(*mobjects):
     return Group(*mobjects).shift(9 * RIGHT).animate.shift(9 * LEFT)
 
 def AnimateToLeft(*mobjects):

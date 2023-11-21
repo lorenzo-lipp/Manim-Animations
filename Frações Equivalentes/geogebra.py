@@ -27,12 +27,12 @@ class Geogebra(Scene):
         group2.shift(9 * RIGHT)
 
         self.play(group1.animate.shift(9 * LEFT), run_time=0.7)
-        self.wait(2.5)
+        self.wait(2)
         self.play(
             group1.animate.shift(9 * LEFT),
             group2.animate.shift(9 * LEFT),
             run_time=0.7
         )
-        self.wait(2.5)
+        self.wait(2)
         self.play(group2.animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)

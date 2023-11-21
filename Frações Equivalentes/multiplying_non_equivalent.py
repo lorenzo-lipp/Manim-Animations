@@ -45,4 +45,12 @@ class MultiplyingNonEquivalent(Scene):
         self.wait(1)
         self.play(Write(equal), run_time=0.5)
         self.wait(0.5)
+        self.play(
+            FadeOut(arrow_up),
+            FadeOut(text_up),
+            FadeOut(arrow_down),
+            FadeOut(text_down),
+            run_time=0.7
+        )
+        self.wait(0.5)
         self.play(FadeOut(Group(*self.mobjects)), run_time=0.7)

@@ -60,7 +60,6 @@ class MultiplyingTwoSteps(Scene):
             Write(arrow_up_1),
             Write(text_up_1, run_time=0.7)
         )
-        self.wait(0.5)
         self.play(
             Write(arrow_down_1),
             Write(text_down_1, run_time=0.7)
@@ -79,7 +78,6 @@ class MultiplyingTwoSteps(Scene):
             Write(arrow_up_2),
             Write(text_up_2, run_time=0.7)
         )
-        self.wait(0.5)
         self.play(
             Write(arrow_down_2),
             Write(text_down_2, run_time=0.7)
@@ -94,5 +92,4 @@ class MultiplyingTwoSteps(Scene):
             FadeOut(text_down_2), 
             run_time=0.7
         )
-        self.wait(1)
         self.play(FadeOut(Group(*self.mobjects)), run_time=0.7)
