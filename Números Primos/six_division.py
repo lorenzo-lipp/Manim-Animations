@@ -51,7 +51,7 @@ class SixDivision(Scene):
             lag_ratio=0.3, 
             run_time=1.5
         ))
-        self.wait(1)
+        self.wait(0.5)
         self.play(LaggedStart(
             Create(square1),
             Create(square2),
@@ -60,7 +60,7 @@ class SixDivision(Scene):
             lag_ratio=0.3,
             run_time=2.5
         ))
-        self.wait(2.5)
+        self.wait(1)
         self.play(
             FadeOut(square1), 
             FadeOut(square2), 
@@ -69,4 +69,3 @@ class SixDivision(Scene):
             FadeOut(divisions), 
             run_time=0.5
         )
-        self.wait(0.5)

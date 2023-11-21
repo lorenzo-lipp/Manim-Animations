@@ -24,9 +24,6 @@ class TenPrimes(Scene):
         ).arrange(DOWN, buff=0.8)
 
         self.play(Write(text), run_time=0.7)
-
-        for prime in primes:
-            self.play(DrawBorderThenFill(prime), run_time=0.3, rate_func=linear)
-
+        self.play(SpinInFromNothing(primes), run_time=1.5)
         self.wait(2)
         self.play(Group(*self.mobjects).animate.scale(0), run_time=0.7)

@@ -57,4 +57,3 @@ class FiveDivision(Scene):
             FadeOut(divisions), 
             run_time=0.5
         )
-        self.wait(0.5)

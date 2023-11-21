@@ -62,7 +62,7 @@ class QuestionOne(Scene):
             text_1.animate.shift(9 * RIGHT),
             run_time=0.7
         )
-        self.wait(2.5)
+        self.wait(1.5)
         self.play(
             animal_1.animate.shift(9 * LEFT), 
             speech_1.animate.shift(9 * LEFT), 
@@ -72,13 +72,13 @@ class QuestionOne(Scene):
             text_2.animate.shift(9 * LEFT), 
             run_time=0.7
         )
-        self.wait(2.5)
+        self.wait(1)
         self.play(
             FadeOut(text_2),
             FadeIn(text_3), 
             run_time=0.5
         )
-        self.wait(2.5)
+        self.wait(1)
         self.play(
             animal_2.animate.shift(9 * LEFT), 
             speech_2.animate.shift(9 * LEFT), 
@@ -88,7 +88,7 @@ class QuestionOne(Scene):
             text_4.animate.shift(9 * LEFT), 
             run_time=0.7
         )
-        self.wait(2.5)
+        self.wait(1.5)
         self.play(
             animal_3.animate.shift(9 * LEFT), 
             speech_3.animate.shift(8 * LEFT), 
