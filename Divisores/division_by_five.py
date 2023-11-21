@@ -48,7 +48,6 @@ class DivisionByFive(Scene):
         self.play(
             FadeIn(bananas), 
             FadeIn(kids),
-            FadeIn(division),
             run_time=0.5
         )
         self.wait(0.5)
@@ -63,5 +62,8 @@ class DivisionByFive(Scene):
                 lag_ratio=0.5
             )
         )
-        self.wait(0.8)
+        self.wait(0.3)
+        self.play(Write(division), run_time=0.7)
+        self.wait(0.5)
+        self.play(Flash(division[1][1][0][-1], color=LIGHT_RED_COLOR, flash_radius=0.35))
         self.play(FadeOut(*self.mobjects), run_time=0.5)
