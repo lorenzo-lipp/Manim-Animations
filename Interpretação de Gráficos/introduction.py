@@ -55,7 +55,7 @@ class Introduction(Scene):
             self.play(Create(Line(points[i], points[i + 1], color=LIGHT_RED_COLOR)), run_time=0.2)
 
         self.play(Write(chart), run_time=0.4)
-        self.play(chart.animate.change_bar_values([0.1, 0.2, 0.3, 0.4, 0.5, 0.6]), run_time=1.3)
-        self.wait(1.2)
-        self.play(Group(*self.mobjects).animate.shift(9 * LEFT), run_time=0.5)
+        self.play(chart.animate.change_bar_values([0.1, 0.2, 0.3, 0.4, 0.5, 0.6]), run_time=1)
+        self.wait(0.5)
+        self.play(Group(*self.mobjects).animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)

@@ -56,7 +56,6 @@ class GraphOne(Scene):
         )
 
         self.play(table.animate.shift(9 * LEFT), run_time=0.7)
-        self.wait(1)
         self.play(
             FadeIn(lines),
             FadeIn(chart), 
@@ -101,14 +100,12 @@ class GraphOne(Scene):
         self.play(FadeIn(strawberry_cells), run_time=0.5)
         self.play(chart.animate.change_bar_values([3, 1, 2]), run_time=1)
         self.play(FadeOut(strawberry_cells), run_time=0.5)
-
-        self.wait(2)
-
+        self.wait(1.3)
         self.play(
             FadeOut(lines),
             FadeOut(chart), 
             FadeOut(x_label), 
             FadeOut(y_label), 
-            run_time=0.4
+            run_time=0.7
         )
         self.remove(*self.mobjects)

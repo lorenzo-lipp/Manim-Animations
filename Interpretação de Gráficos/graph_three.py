@@ -40,7 +40,11 @@ class GraphThree(Scene):
             Line(axes.coords_to_point(0, 6000, 0), axes.coords_to_point(7, 6000, 0), color=BLACK, stroke_width=1),
             Line(axes.coords_to_point(0, 7000, 0), axes.coords_to_point(7, 7000, 0), color=BLACK, stroke_width=1),
             Line(axes.coords_to_point(0, 8000, 0), axes.coords_to_point(7, 8000, 0), color=BLACK, stroke_width=1),
-            Line(axes.coords_to_point(0, 9000, 0), axes.coords_to_point(7, 9000, 0), color=BLACK, stroke_width=1)
+            Line(axes.coords_to_point(0, 9000, 0), axes.coords_to_point(7, 9000, 0), color=BLACK, stroke_width=1),
+            DashedLine(axes.coords_to_point(1, 0, 0), axes.coords_to_point(1, 5000, 0), color=LIGHT_BLUE_COLOR, stroke_width=4, dashed_ratio=0.3),
+            DashedLine(axes.coords_to_point(2, 0, 0), axes.coords_to_point(2, 3000, 0), color=LIGHT_BLUE_COLOR, stroke_width=4, dashed_ratio=0.3),
+            DashedLine(axes.coords_to_point(4, 0, 0), axes.coords_to_point(4, 8000, 0), color=LIGHT_BLUE_COLOR, stroke_width=4, dashed_ratio=0.3),
+            DashedLine(axes.coords_to_point(6, 0, 0), axes.coords_to_point(6, 5000, 0), color=LIGHT_BLUE_COLOR, stroke_width=4, dashed_ratio=0.3)
         )
         points = VGroup(
             Dot(axes.coords_to_point(1, 5000, 0), color=LIGHT_BLUE_COLOR),
@@ -79,7 +83,7 @@ class GraphThree(Scene):
             lines[0].animate.set(color=LIGHT_RED_COLOR),
             run_time=0.5
         )
-        self.wait(1.2)
+        self.wait(2)
         self.play(
             points[0].animate.set(color=LIGHT_BLUE_COLOR).scale(1/1.3),
             points[1].animate.set(color=LIGHT_BLUE_COLOR).scale(1/1.3),
@@ -95,7 +99,7 @@ class GraphThree(Scene):
             lines[2].animate.set(color=LIGHT_RED_COLOR),
             run_time=0.5
         )
-        self.wait(1.2)
+        self.wait(2)
         self.play(
             points[1].animate.set(color=LIGHT_BLUE_COLOR).scale(1/1.3),
             points[2].animate.set(color=LIGHT_BLUE_COLOR).scale(1/1.3),
@@ -113,7 +117,7 @@ class GraphThree(Scene):
             lines[4].animate.set(color=LIGHT_RED_COLOR),
             run_time=0.5
         )
-        self.wait(1.2)
+        self.wait(2)
         self.play(
             points[3].animate.set(color=LIGHT_BLUE_COLOR).scale(1/1.3),
             points[4].animate.set(color=LIGHT_BLUE_COLOR).scale(1/1.3),

@@ -44,6 +44,8 @@ class GraphTwo(Scene):
         graph = Group(circle, legend)
         legend.shift(3 * RIGHT)
         graph.shift(3.4 * DOWN)
+        title = Tex("Frutas favoritas", color=BLACK)
+        title.next_to(circle, UP, buff=0.5)
         basic_line = Line(circle.get_center(), circle.get_top(), color=BLACK)
         auxiliary_lines = VGroup(
             basic_line.copy(),
@@ -73,9 +75,13 @@ class GraphTwo(Scene):
         )
 
         self.add(table)
-        self.play(FadeIn(graph), run_time=0.5)
+        self.play(
+            FadeIn(graph), 
+            FadeIn(title),
+            run_time=0.5
+        )
         self.play(FadeIn(auxiliary_lines), run_time=0.5)
-        self.wait(1)
+        self.wait(0.5)
         
         banana_cells = Group(
             table.get_highlighted_cell((2, 1), color=LIGHT_YELLOW_COLOR),
@@ -119,11 +125,11 @@ class GraphTwo(Scene):
             FadeOut(auxiliary_lines[2]),
             FadeOut(auxiliary_lines[4]),
             FadeOut(orange_cells), 
-            run_time=0.5
+            run_time=0.7
         )
 
         orange_sector.clear_updaters()      
 
-        self.wait(2)
+        self.wait(1.3)
         self.play(Group(*self.mobjects).animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)
