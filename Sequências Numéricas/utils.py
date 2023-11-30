@@ -13,7 +13,6 @@ def running_start(t):
 
 def FibonacciSquare(size, color):
     rect = Square(size / 5, color=color)
-
     text = Tex(f"{size}", color=color)
     text.scale(3 * min(1, size / 12))
     text.move_to(rect)
