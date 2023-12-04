@@ -18,6 +18,10 @@ class Introduction(Scene):
         monster2 = ImageMobject("./assets/Asset 2.png")
         monster3 = ImageMobject("./assets/Asset 3.png")
         monster4 = ImageMobject("./assets/Asset 4.png")
+        monster1.scale(1.5)
+        monster2.scale(1.5)
+        monster3.scale(1.5)
+        monster4.scale(1.5)
         Group(
             Group(monster1, monster2).arrange(RIGHT, buff=2),
             title,

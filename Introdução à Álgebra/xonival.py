@@ -33,9 +33,9 @@ class Xonival(Scene):
         )
         self.wait(1)
         self.play(Transform(operation_1.copy(), operation_2))
-        self.wait(1)
+        self.wait(1.5)
         self.play(Transform(operation_2.copy(), operation_3))
-        self.wait(1)
+        self.wait(0.5)
         self.play(
             SpinInFromNothing(conclusion_1),
             SpinInFromNothing(conclusion_2)

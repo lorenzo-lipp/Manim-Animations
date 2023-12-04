@@ -10,13 +10,13 @@
 
 <img src="./final_files/AlgebraTwo.gif" height="720px">
 
-## Algebra Three
-
-<img src="./final_files/AlgebraThree.gif" height="720px">
-
 ## Xonival
 
 <img src="./final_files/Xonival.gif" height="720px">
+
+## Symbols
+
+<img src="./final_files/Symbols.gif" height="720px">
 
 ## Algebra With Letters
 

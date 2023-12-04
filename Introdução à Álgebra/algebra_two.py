@@ -23,9 +23,9 @@ class AlgebraTwo(Scene):
         
 
         self.play(operation_1.shift(9 * RIGHT).animate.shift(9 * LEFT), run_time=0.5)
-        self.wait(1)
-        self.play(Transform(operation_1[5].copy(), operation_2))
-        self.wait(1)
+        self.wait(2)
+        self.play(Transform(operation_1[5].copy(), operation_2), run_time=0.7)
+        self.wait(0.5)
         self.play(SpinInFromNothing(conclusion_1))
         self.wait(1)
         self.play(Group(*self.mobjects).animate.shift(9 * LEFT), run_time=0.5)
