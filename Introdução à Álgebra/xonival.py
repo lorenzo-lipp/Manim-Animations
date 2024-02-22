@@ -24,22 +24,23 @@ class Xonival(Scene):
             operation_2,
             operation_3,
             Group(conclusion_1, conclusion_2).arrange(RIGHT, buff=0.5),
-        ).arrange(DOWN, buff=0.7)
+        ).arrange(DOWN, buff=0.6)
         
 
         self.play(
             label.shift(9 * LEFT).animate.shift(9 * RIGHT), 
             operation_1.shift(9 * LEFT).animate.shift(9 * RIGHT)
         )
-        self.wait(1)
-        self.play(Transform(operation_1.copy(), operation_2))
-        self.wait(1.5)
-        self.play(Transform(operation_2.copy(), operation_3))
+        self.wait(0.5)
+        self.play(Transform(operation_1.copy(), operation_2), run_time=0.7)
+        self.wait(1.8)
+        self.play(Transform(operation_2.copy(), operation_3), run_time=0.7)
         self.wait(0.5)
         self.play(
             SpinInFromNothing(conclusion_1),
-            SpinInFromNothing(conclusion_2)
+            SpinInFromNothing(conclusion_2),
+            run_time=0.7
         )
-        self.wait(1.5)
+        self.wait(3)
         self.play(Group(*self.mobjects).animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)

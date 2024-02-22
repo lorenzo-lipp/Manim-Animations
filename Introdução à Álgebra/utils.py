@@ -46,8 +46,8 @@ def MonsterSum(path, times, result_text):
 
 def LetterOperation(expression, expression_result):
     inner_group = Group(
-        Tex(expression, color=TEXT_COLOR).scale(1.8),
-        Tex(expression_result, color=BACKGROUND_COLOR).scale(1.8),
+        MathTex(expression, color=TEXT_COLOR).scale(1.8),
+        MathTex(expression_result, color=BACKGROUND_COLOR).scale(1.8),
     ).arrange(DOWN, buff=0.8)
     box = DashedVMobject(
         SurroundingRectangle(inner_group, color=AQUA_BLUE_COLOR, buff=0.5),
