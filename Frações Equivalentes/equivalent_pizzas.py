@@ -34,6 +34,14 @@ class EquivalentPizzas(Scene):
             ).arrange(RIGHT).shift(2 * DOWN)
         )
         VGroup(one_half, three_out_of_six).arrange(RIGHT, buff=1)
+        fractions = VGroup(
+            MathTex(r"\frac{1}{2}", color=BLACK),
+            MathTex("=", color=BLACK),
+            MathTex(r"\frac{3}{6}", color=BLACK)
+        )
+        fractions.scale(2)
+        fractions.arrange(RIGHT, buff=1)
+        fractions.shift(2 * DOWN)
 
         self.play(LaggedStart(
             SpinInFromNothing(one_half),
@@ -41,5 +49,8 @@ class EquivalentPizzas(Scene):
             lag_ratio=0.5
         ))
         self.wait(2)
+        self.play(Group(*self.mobjects).animate.shift(2 * UP), run_time=0.7)
+        self.play(Write(fractions), run_time=0.5)
+        self.wait(1.7)
         self.play(AnimateToLeft(*self.mobjects), run_time=0.7)
         self.remove(*self.mobjects)

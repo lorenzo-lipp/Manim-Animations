@@ -35,7 +35,7 @@ class EquivalentCrackers(Scene):
             Write(cracker_fraction),
             run_time=0.7
         )
-        self.wait(1)
+        self.wait(1.2)
         self.play(
             Transform(
                 cracker[1][0],

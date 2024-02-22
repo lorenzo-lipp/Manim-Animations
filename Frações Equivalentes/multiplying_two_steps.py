@@ -58,38 +58,38 @@ class MultiplyingTwoSteps(Scene):
         self.play(Write(fractions), run_time=0.5)
         self.play(
             Write(arrow_up_1),
-            Write(text_up_1, run_time=0.7)
+            Write(text_up_1, run_time=0.6)
         )
         self.play(
             Write(arrow_down_1),
-            Write(text_down_1, run_time=0.7)
+            Write(text_down_1, run_time=0.6)
         )
-        self.wait(1)
-        self.play(Write(equal_1), run_time=0.5)
-        self.wait(0.5)
+        self.wait(0.7)
+        self.play(Write(equal_1), run_time=0.4)
+        self.wait(0.4)
         self.play(
             FadeOut(arrow_up_1), 
             FadeOut(arrow_down_1), 
             FadeOut(text_up_1), 
             FadeOut(text_down_1), 
-            run_time=0.7
+            run_time=0.6
         )
         self.play(
             Write(arrow_up_2),
-            Write(text_up_2, run_time=0.7)
+            Write(text_up_2, run_time=0.6)
         )
         self.play(
             Write(arrow_down_2),
-            Write(text_down_2, run_time=0.7)
+            Write(text_down_2, run_time=0.6)
         )
-        self.wait(1)
-        self.play(Write(equal_2), run_time=0.5)
-        self.wait(0.5)
+        self.wait(0.7)
+        self.play(Write(equal_2), run_time=0.4)
+        self.wait(0.4)
         self.play(
             FadeOut(arrow_up_2), 
             FadeOut(arrow_down_2), 
             FadeOut(text_up_2), 
             FadeOut(text_down_2), 
-            run_time=0.7
+            run_time=0.6
         )
         self.play(FadeOut(Group(*self.mobjects)), run_time=0.7)

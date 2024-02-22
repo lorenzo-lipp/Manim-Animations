@@ -6,10 +6,6 @@
 
 <img src="./final_files/EquivalentPizzas.gif" height="720px">
 
-## Equivalent Fractions
-
-<img src="./final_files/EquivalentFractions.gif" height="720px">
-
 ## Equivalent Crackers
 
 <img src="./final_files/EquivalentCrackers.gif" height="720px">
