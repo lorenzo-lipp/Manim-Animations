@@ -3,7 +3,7 @@
 | Nome | Finalizado |
 |------|-----------|
 | Divisores | Sim |
-| Frações Equivalentes | Não |
+| Frações Equivalentes | Sim |
 | Interpretação de Gráficos | Não |
 | Introdução à Álgebra | Não |
 | Números Primos | Sim |
@@ -14,6 +14,7 @@
 
 | Nome | Finalizado |
 |------|-----------|
+| Desenho na Malha | Não |
 | Peças Giratórias | Não |
 | Subida Escorregadia | Não |
 | Troca de Etiquetas | Sim |
