@@ -4,8 +4,8 @@
 |------|-----------|
 | Divisores | Sim |
 | Frações Equivalentes | Sim |
-| Interpretação de Gráficos | Não |
-| Introdução à Álgebra | Não |
+| Interpretação de Gráficos | Sim |
+| Introdução à Álgebra | Sim |
 | Números Primos | Sim |
 | O que é Fração | Sim |
 | Sequências Numéricas | Sim |

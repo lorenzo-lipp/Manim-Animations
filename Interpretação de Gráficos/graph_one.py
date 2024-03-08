@@ -9,22 +9,6 @@ class GraphOne(Scene):
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
 
-        table = Table(
-            [
-                ["Pablo", "Banana"],
-                ["Gabriela", "Morango"],
-                ["Bianca", "Laranja"],
-                ["Murilo", "Morango"],
-                ["Heitor", "Banana"],
-                ["Isabela", "Banana"],
-            ],
-            col_labels=[Text("Nome"), Text("Fruta Favorita")],
-            include_outer_lines=True
-        )
-        table.get_vertical_lines().set(color=BLACK)
-        table.get_horizontal_lines().set(color=BLACK)
-        table.get_entries().set(color=BLACK)
-        table.scale(0.5)
         chart = BarChart(
             [0, 0, 0],
             y_range=[0, 3, 1],
@@ -38,7 +22,6 @@ class GraphOne(Scene):
         chart.x_axis.set(color=BLACK)
         chart.y_axis.set(color=BACKGROUND_COLOR)
         chart[2][0][1].set(color=BLACK)
-        Group(table, chart).arrange(DOWN, buff=2)
         x_label = Tex("Frutas favoritas", color=BLACK)
         x_label.scale(0.7)
         x_label.next_to(chart, DOWN)
@@ -48,14 +31,19 @@ class GraphOne(Scene):
         y_label.rotate(PI/2)
         y_label.next_to(chart, LEFT)
         y_label.shift(0.2 * UP)
-        table.shift(9 * RIGHT)
+        Group(chart, x_label, y_label).shift(2 * UP)
         lines = VGroup(
-            Line(chart.coords_to_point(0, 1, 0), chart.coords_to_point(3, 1, 0), color=BLACK, stroke_width=1),
-            Line(chart.coords_to_point(0, 2, 0), chart.coords_to_point(3, 2, 0), color=BLACK, stroke_width=1),
-            Line(chart.coords_to_point(0, 3, 0), chart.coords_to_point(3, 3, 0), color=BLACK, stroke_width=1)
+            Line(chart.coords_to_point(0, 1, 0), chart.coords_to_point(3, 1, 0), color=LIGHT_GRAY, stroke_width=3),
+            Line(chart.coords_to_point(0, 2, 0), chart.coords_to_point(3, 2, 0), color=LIGHT_GRAY, stroke_width=3),
+            Line(chart.coords_to_point(0, 3, 0), chart.coords_to_point(3, 3, 0), color=LIGHT_GRAY, stroke_width=3)
         )
+        text = VGroup(
+            Tex("Três pessoas preferem banana", color=BLACK),
+            Tex("Uma pessoa prefere laranja", color=BLACK),
+            Tex("Duas pessoas preferem morango", color=BLACK)
+        ).arrange(DOWN, buff=0.4, aligned_edge=LEFT)
+        text.shift(2.8 * DOWN)
 
-        self.play(table.animate.shift(9 * LEFT), run_time=0.7)
         self.play(
             FadeIn(lines),
             FadeIn(chart), 
@@ -63,49 +51,45 @@ class GraphOne(Scene):
             FadeIn(y_label), 
             run_time=0.4
         )
-        self.wait(1)
-
-        banana_cells = Group(
-            table.get_highlighted_cell((2, 1), color=LIGHT_YELLOW_COLOR),
-            table.get_highlighted_cell((2, 2), color=LIGHT_YELLOW_COLOR),
-            table.get_highlighted_cell((6, 1), color=LIGHT_YELLOW_COLOR),
-            table.get_highlighted_cell((6, 2), color=LIGHT_YELLOW_COLOR),
-            table.get_highlighted_cell((7, 1), color=LIGHT_YELLOW_COLOR),
-            table.get_highlighted_cell((7, 2), color=LIGHT_YELLOW_COLOR)
-        )
-        add_to_back(self, banana_cells)
-
-        self.play(FadeIn(banana_cells), run_time=0.5)
-        self.play(chart.animate.change_bar_values([3, 0, 0]), run_time=1.3)
-        self.play(FadeOut(banana_cells), run_time=0.5)
-
-        orange_cells = Group(
-            table.get_highlighted_cell((4, 1), color=LIGHT_ORANGE_COLOR),
-            table.get_highlighted_cell((4, 2), color=LIGHT_ORANGE_COLOR)
-        )
-        add_to_back(self, orange_cells)
-
-        self.play(FadeIn(orange_cells), run_time=0.5)
-        self.play(chart.animate.change_bar_values([3, 1, 0]), run_time=0.7)
-        self.play(FadeOut(orange_cells), run_time=0.5)
-
-        strawberry_cells = Group(
-            table.get_highlighted_cell((3, 1), color=LIGHT_RED_COLOR),
-            table.get_highlighted_cell((3, 2), color=LIGHT_RED_COLOR),
-            table.get_highlighted_cell((5, 1), color=LIGHT_RED_COLOR),
-            table.get_highlighted_cell((5, 2), color=LIGHT_RED_COLOR)
-        )
-        add_to_back(self, strawberry_cells)
-
-        self.play(FadeIn(strawberry_cells), run_time=0.5)
-        self.play(chart.animate.change_bar_values([3, 1, 2]), run_time=1)
-        self.play(FadeOut(strawberry_cells), run_time=0.5)
+        self.play(chart.animate.change_bar_values([3, 0, 0]), run_time=1.4, rate_func=linear)
+        self.wait(0.5)
+        self.play(chart.animate.change_bar_values([3, 1, 0]), run_time=0.6, rate_func=linear)
+        self.wait(0.5)
+        self.play(chart.animate.change_bar_values([3, 1, 2]), run_time=1, rate_func=linear)
         self.wait(1.3)
         self.play(
-            FadeOut(lines),
-            FadeOut(chart), 
-            FadeOut(x_label), 
-            FadeOut(y_label), 
+            lines[2].animate.set(color=LIGHT_RED_COLOR), 
+            chart.y_axis.numbers[2].animate.set(color=LIGHT_RED_COLOR).scale(1.5),
             run_time=0.7
         )
+        self.play(Write(text[0]), run_time=0.7)
+        self.wait(1.2)
+        self.play(
+            lines[2].animate.set(color=LIGHT_GRAY), 
+            chart.y_axis.numbers[2].animate.set(color=BLACK).scale(2/3),
+            lines[0].animate.set(color=LIGHT_RED_COLOR),
+            chart.y_axis.numbers[0].animate.set(color=LIGHT_RED_COLOR).scale(1.5),
+            run_time=0.7
+        )
+        self.play(Write(text[1]), run_time=0.7)
+        self.wait(1.2)
+        self.play(
+            lines[0].animate.set(color=LIGHT_GRAY), 
+            chart.y_axis.numbers[0].animate.set(color=BLACK).scale(2/3),
+            lines[1].animate.set(color=LIGHT_RED_COLOR),
+            chart.y_axis.numbers[1].animate.set(color=LIGHT_RED_COLOR).scale(1.5),
+            run_time=0.7
+        )
+        self.play(Write(text[2]), run_time=0.7)
+        self.wait(1.2)
+        self.play(
+            lines[1].animate.set(color=LIGHT_GRAY), 
+            chart.y_axis.numbers[1].animate.set(color=BLACK).scale(2/3),
+            run_time=0.7
+        )
+        self.play(
+            FadeOut(text),
+            run_time=0.7
+        )
+        self.wait(1)
         self.remove(*self.mobjects)

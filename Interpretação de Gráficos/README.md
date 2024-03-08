@@ -14,10 +14,6 @@
 
 <img src="./final_files/GraphThree.gif" height="720px">
 
-## Geogebra
-
-<img src="./final_files/Geogebra.gif" height="720px">
-
 ## Logo
 
 <img src="./final_files/Logo.gif" height="720px">

@@ -42,20 +42,21 @@ class Introduction(Scene):
         Group(text, Group(axes, points), chart).arrange(DOWN, buff=1)
 
         self.play(Write(text), run_time=0.7)
-        self.play(Write(axes), run_time=0.4)
+        self.play(Write(axes), Write(chart), run_time=0.7)
         self.play(
             LaggedStart(
                 *[Create(point) for point in points],
                 lag_ratio=0.2,
                 run_time=1
-            )
+            ),
+            chart.animate.change_bar_values([0.1, 0.2, 0.3, 0.4, 0.5, 0.6])
         )
 
         for i in range(4):
             self.play(Create(Line(points[i], points[i + 1], color=LIGHT_RED_COLOR)), run_time=0.2)
 
-        self.play(Write(chart), run_time=0.4)
-        self.play(chart.animate.change_bar_values([0.1, 0.2, 0.3, 0.4, 0.5, 0.6]), run_time=1)
+        #self.play(Write(chart), run_time=0.4)
+        #self.play(chart.animate.change_bar_values([0.1, 0.2, 0.3, 0.4, 0.5, 0.6]), run_time=1)
         self.wait(0.5)
         self.play(Group(*self.mobjects).animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)
