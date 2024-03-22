@@ -8,6 +8,8 @@
 | Introdução à Álgebra | Sim |
 | Números Primos | Sim |
 | O que é Fração | Sim |
+| Quadriláteros | Não |
+| Sequência de Figuras | Não |
 | Sequências Numéricas | Sim |
 
 # Desafios
@@ -17,4 +19,6 @@
 | Desenho na Malha | Não |
 | Peças Giratórias | Não |
 | Subida Escorregadia | Não |
+| Tabuleiro Colorido | Não |
 | Troca de Etiquetas | Sim |
+| Trocando Adesivos | Não |

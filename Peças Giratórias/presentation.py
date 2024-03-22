@@ -98,13 +98,23 @@ class Presentation(Scene):
         inner_piece = VGroup(inner_pentagon, inner_circles, inner_numbers)
         ellipse = Ellipse(2, 1, color=LIGHT_RED_COLOR)
         ellipse.surround(Group(outer_numbers[3], inner_numbers[3])).rotate(-22 * DEGREES)
+        text = MathTex("= 30", color=LIGHT_RED_COLOR)
+        text.next_to(ellipse, DR, buff=0)
+        text.shift(0.2 * UP + 0.1 * RIGHT)
 
         self.play(AnimateFromLeft(outer_piece, middle_piece, inner_piece), run_time=0.7)
         self.wait(2)
         RotatePiece(self, inner_piece, center_of_mass(inner_points))
         self.wait(2)
         RotatePiece(self, middle_piece, center_of_mass(middle_points))
-        self.play(Write(ellipse), run_time=0.7)
+        inner_numbers.clear_updaters()
+        middle_numbers.clear_updaters()
+        outer_numbers.clear_updaters()
+        self.play(
+            Write(ellipse),
+            Write(text), 
+            run_time=0.7
+        )
         self.wait(1)
         self.play(AnimateToLeft(*self.mobjects))
         self.remove(*self.mobjects)
