@@ -17,7 +17,7 @@
 | Nome | Finalizado |
 |------|-----------|
 | Desenho na Malha | Não |
-| Peças Giratórias | Não |
+| Peças Giratórias | Sim |
 | Subida Escorregadia | Não |
 | Tabuleiro Colorido | Não |
 | Troca de Etiquetas | Sim |
