@@ -9,7 +9,7 @@
 | Números Primos | Sim |
 | O que é Fração | Sim |
 | Quadriláteros | Não |
-| Sequência de Figuras | Não |
+| Sequência de Figuras | Sim |
 | Sequências Numéricas | Sim |
 
 # Desafios
