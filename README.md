@@ -17,7 +17,7 @@
 | Nome | Finalizado |
 |------|-----------|
 | Copiando Formas | Não |
-| Desenho na Malha | Não |
+| Desenho na Malha | Sim |
 | Peça Quebrada | Não |
 | Peças Giratórias | Sim |
 | Subida Escorregadia | Não |
