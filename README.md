@@ -11,6 +11,7 @@
 | Quadriláteros | Não |
 | Sequência de Figuras | Sim |
 | Sequências Numéricas | Sim |
+| Triângulos | Não |
 
 # Desafios
 
