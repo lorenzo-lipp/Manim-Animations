@@ -17,7 +17,7 @@
 
 | Nome | Finalizado |
 |------|-----------|
-| Copiando Formas | Não |
+| Copiando Formas | Sim |
 | Desenho na Malha | Sim |
 | Peça Quebrada | Não |
 | Peças Giratórias | Sim |
