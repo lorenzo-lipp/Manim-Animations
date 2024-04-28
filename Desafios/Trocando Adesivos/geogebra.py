@@ -17,7 +17,7 @@ class Geogebra(Scene):
         text2 = Tex(r"\textbf{Trocando Adesivos II}", color=DARK_BLUE_COLOR)
         text2.scale(1.2)
         img2 = ImageMobject("./assets/trocando-adesivos-ii.png")
-        img2.scale(1.3)
+        img2.scale(0.8)
         link2 = Tex(r"\textbf{Link: bit.ly/qcm-adesivos2}", color=DARK_BLUE_COLOR)
         group1 = Group(text1, img1, link1)
         group1.arrange(DOWN, buff=0.5)

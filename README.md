@@ -24,4 +24,4 @@
 | Subida Escorregadia | Não |
 | Tabuleiro Colorido | Não |
 | Troca de Etiquetas | Sim |
-| Trocando Adesivos | Não |
+| Trocando Adesivos | Sim |
