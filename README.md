@@ -4,6 +4,7 @@
 |------|-----------|
 | Divisores | Sim |
 | Frações Equivalentes | Sim |
+| Grandezas | Não |
 | Interpretação de Gráficos | Sim |
 | Introdução à Álgebra | Sim |
 | Números Primos | Sim |
