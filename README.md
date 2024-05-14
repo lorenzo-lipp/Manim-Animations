@@ -9,6 +9,7 @@
 | Introdução à Álgebra | Sim |
 | Números Primos | Sim |
 | O que é Fração | Sim |
+| O que são Polígonos | Não |
 | Quadriláteros | Não |
 | Sequência de Figuras | Sim |
 | Sequências Numéricas | Sim |
