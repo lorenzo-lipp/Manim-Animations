@@ -9,43 +9,13 @@ class Introduction(Scene):
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
 
-        clock = Clock()
-        clock.scale(2.5)
-        clock.shift(14 * UP)
-        time = always_redraw(lambda: 
-            VGroup(
-                Tex(str(clock.hours).replace("0", "12"), color=LIGHT_RED_COLOR),
-                Tex("h ", color=LIGHT_RED_COLOR),
-                Tex(str(clock.minutes), color=LIGHT_RED_COLOR),
-                Tex("min", color=LIGHT_RED_COLOR)
-            ).scale(2)
-            .arrange(RIGHT, buff=0.1)
-            .next_to(clock, DOWN, buff=1)
-        )
+        title = VGroup(
+            Tex("Relógio de", color=LIGHT_BLUE_COLOR),
+            Tex("Ponteiros", color=LIGHT_BLUE_COLOR)
+        ).arrange(DOWN, buff=0.1)
+        title.scale(2.2)
 
-        self.add(clock, time)
-        self.play(*clock.set_time(1, 0), run_time=0.001)
-        self.play(clock.animate.shift(13 * DOWN))
-        self.wait(1)
-        self.play(Indicate(clock.hours_pointer, color=LIGHT_RED_COLOR, run_time=1.5))
+        self.play(Write(title), run_time=0.7)
         self.wait(2)
-        self.play(Indicate(clock.minutes_pointer, color=LIGHT_RED_COLOR, run_time=1.5))
-        self.wait(1)
-        self.play(*[Indicate(tick, color=LIGHT_RED_COLOR, run_time=2) for tick in clock.small_ticks])
-        self.wait(1)
-        self.play(
-            *[Indicate(tick, color=LIGHT_RED_COLOR, run_time=2) for tick in clock.big_ticks],
-            *[Indicate(text, color=LIGHT_RED_COLOR, run_time=2) for text in clock.number_texts]
-        )
-        self.wait(1)
-
-        for i in range(1, 6):
-            self.play(*clock.set_time(1, i), run_time=0.5)
-            self.wait(0.1)
-
-        self.wait(2)
-        self.play(*clock.set_time(1, 59), run_time=3)
-        self.wait(1)
-        self.play(*clock.set_time(2, 0), run_time=0.5)
-        self.wait(1)
+        self.play(AnimateToLeft(*self.mobjects), run_time=0.7)
         self.remove(*self.mobjects)

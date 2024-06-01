@@ -9,16 +9,9 @@ class Geogebra(Scene):
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
 
-        group1 = GeogebraLink(title="Desafio das Frutas I", img="desafio-das-frutas-i", link="qcm-frutas1", scale=0.8)
-        group2 = GeogebraLink(title="Desafio das Frutas II", img="desafio-das-frutas-ii", link="qcm-frutas2", scale=0.8)
+        group1 = GeogebraLink(title="Relógio de Ponteiros", img="relogio-de-ponteiros", link="qcm-relogio", scale=0.8)
 
         self.play(group1.animate.shift(9 * LEFT), run_time=0.7)
         self.wait(2.5)
-        self.play(
-            group1.animate.shift(9 * LEFT),
-            group2.animate.shift(9 * LEFT),
-            run_time=0.7
-        )
-        self.wait(2.5)
-        self.play(group2.animate.shift(9 * LEFT), run_time=0.7)
+        self.play(group1.animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)
