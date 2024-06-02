@@ -11,6 +11,7 @@
 | O que é Fração | Sim |
 | O que são Polígonos | Não |
 | Quadriláteros | Não |
+| Relógio de Ponteiros | Não |
 | Sequência de Figuras | Sim |
 | Sequências Numéricas | Sim |
 | Triângulos | Não |

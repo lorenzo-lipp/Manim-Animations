@@ -24,3 +24,16 @@ def AnimateFromLeft(*mobjects):
 
 def AnimateToLeft(*mobjects):
     return Group(*mobjects).animate.shift(9 * LEFT)
+
+def GeogebraLink(title, img, link, scale=0.8):
+    text = Tex(r"\textbf{" + title + "}", color=DARK_BLUE_COLOR)
+    text.scale(1.2)
+    img = ImageMobject("./assets/" + img + ".png")
+    img.scale(scale)
+    link = Tex(r"\textbf{Link: bit.ly/" + link + "}", color=DARK_BLUE_COLOR)   
+    link[0][0:5].set(color=BLACK)
+    group = Group(text, img, link)
+    group.arrange(DOWN, buff=0.5)
+    group.shift(9 * RIGHT)
+
+    return group
