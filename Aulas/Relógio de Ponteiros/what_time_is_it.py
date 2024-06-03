@@ -30,20 +30,17 @@ class WhatTimeIsIt(Scene):
         self.play(Indicate(clock.hours_pointer, color=LIGHT_RED_COLOR, run_time=1.5))
         self.wait(2)
         self.play(Indicate(clock.minutes_pointer, color=LIGHT_RED_COLOR, run_time=1.5))
-        self.wait(1)
-        self.play(*[Indicate(tick, color=LIGHT_RED_COLOR, run_time=2) for tick in clock.small_ticks])
-        self.wait(1)
-        self.play(
-            *[Indicate(tick, color=LIGHT_RED_COLOR, run_time=2) for tick in clock.big_ticks],
-            *[Indicate(text, color=LIGHT_RED_COLOR, run_time=2) for text in clock.number_texts]
-        )
-        self.wait(1)
+        self.wait(2)
 
         for i in range(1, 6):
             self.play(*clock.set_time(1, i), run_time=0.5)
             self.wait(0.1)
 
-        self.wait(2)
+        self.play(
+            *[Indicate(tick, color=LIGHT_RED_COLOR, run_time=1.5) for tick in clock.big_ticks],
+            *[Indicate(text, color=LIGHT_RED_COLOR, run_time=1.5) for text in clock.number_texts]
+        )
+        self.wait(3)
         self.play(*clock.set_time(1, 59), run_time=3)
         self.wait(1)
         self.play(*clock.set_time(2, 0), run_time=0.5)
@@ -68,17 +65,17 @@ class WhatTimeIsIt(Scene):
         time_3.arrange(RIGHT, buff=0.1)
         time_3.next_to(clock, DOWN, buff=1)
 
-        self.wait(3)
-        self.play(FadeIn(time_2), run_time=0.7)
+        self.wait(7)
+        self.play(FadeIn(time_2), run_time=0.5)
         self.wait(1)
-        self.play(FadeOut(time_2), run_time=0.7)
+        self.play(FadeOut(time_2), run_time=0.5)
         self.play(*clock.set_time(0, 55))
-        self.wait(3)
+        self.wait(4)
         self.play(FadeIn(time_3), run_time=0.7)
         self.wait(4)
         self.remove(time_3)
         self.add(time)
         self.play(*clock.set_time(1, 55))
-        self.wait(1)
-        self.play(FadeOut(*self.mobjects))
+        self.wait(2)
+        self.play(FadeOut(*self.mobjects), run_time=0.7)
         self.remove(*self.mobjects)
