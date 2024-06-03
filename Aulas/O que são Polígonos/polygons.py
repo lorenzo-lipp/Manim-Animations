@@ -35,25 +35,6 @@ class Polygons(Scene):
                 Shape14(color=LIGHT_ORANGE_COLOR, fill_opacity=0.6, stroke_width=5)
             ).scale(1.5).arrange(RIGHT, buff=0.8),
         ).arrange(DOWN, buff=0.8)
-        shapes.shift(0.8 * DOWN)
-        text_1 = Tex("Plana", color=TEXT_COLOR)
-        text_1.scale(2)
-        text_1.next_to(shapes, UP, 0.8)
-        text_2 = Tex("Fechada", color=TEXT_COLOR)
-        text_2.scale(2)
-        text_2.next_to(shapes, UP, 0.8)
-        text_3 = VGroup(
-            Tex("Formada por", color=TEXT_COLOR),
-            Tex("segmentos de reta", color=TEXT_COLOR)
-        ).arrange(DOWN, buff=0.2)
-        text_3.scale(1.5)
-        text_3.next_to(shapes, UP, 0.6)
-        text_4 = VGroup(
-            Tex("Os lados não", color=TEXT_COLOR),
-            Tex("podem se cruzar", color=TEXT_COLOR)
-        ).arrange(DOWN, buff=0.2)
-        text_4.scale(1.5)
-        text_4.next_to(shapes, UP, 0.6)
         polygons = VGroup(
             VGroup(
                 Shape3(color=LIGHT_PURPLE_COLOR, fill_opacity=0.6, stroke_width=5),
@@ -70,37 +51,29 @@ class Polygons(Scene):
             ).scale(1.5).arrange(RIGHT, buff=0.8),
         ).arrange(DOWN, buff=0.8)
 
-        self.play(AnimateFromLeft(shapes))
-        self.wait(1)
-        self.play(Write(text_1))
-        self.wait(1)
-        self.play(Indicate(shapes[1][1], color=LIGHT_RED_COLOR, run_time=2))
+        self.play(AnimateFromLeft(shapes), run_time=0.7)
+        self.wait(3.2)
+        self.play(Indicate(shapes[1][1], color=LIGHT_RED_COLOR, run_time=1.5))
         self.wait(0.3)
-        self.play(Indicate(shapes[2][0], color=LIGHT_RED_COLOR, run_time=2))
-        self.wait(0.7)
+        self.play(Indicate(shapes[2][0], color=LIGHT_RED_COLOR, run_time=1.5))
+        self.wait(0.3)
         self.play(AlmostFadeOut(shapes[1][1], shapes[2][0]), run_time=0.7)
-        self.wait(0.5)
-        self.play(Transform(text_1, text_2))
-        self.wait(1)
-        self.play(Indicate(shapes[0][0], color=LIGHT_RED_COLOR, run_time=2))
+        self.wait(2.4)
+        self.play(Indicate(shapes[0][0], color=LIGHT_RED_COLOR, run_time=1.5))
         self.wait(0.3)
-        self.play(Indicate(shapes[3][0], color=LIGHT_RED_COLOR, run_time=2))
-        self.wait(0.7)
+        self.play(Indicate(shapes[3][0], color=LIGHT_RED_COLOR, run_time=1.5))
+        self.wait(0.3)
         self.play(AlmostFadeOut(shapes[0][0], shapes[3][0]), run_time=0.7)
-        self.wait(0.5)
-        self.play(Transform(text_1, text_3))
-        self.wait(1)
-        self.play(Indicate(shapes[0][1], color=LIGHT_RED_COLOR, run_time=2))
+        self.wait(2.4)
+        self.play(Indicate(shapes[0][1], color=LIGHT_RED_COLOR, run_time=1.5))
         self.wait(0.3)
-        self.play(Indicate(shapes[3][1], color=LIGHT_RED_COLOR, run_time=2))
-        self.wait(0.7)
+        self.play(Indicate(shapes[3][1], color=LIGHT_RED_COLOR, run_time=1.5))
+        self.wait(0.3)
         self.play(AlmostFadeOut(shapes[0][1], shapes[3][1]), run_time=0.7)
-        self.wait(0.5)
-        self.play(Transform(text_1, text_4))
-        self.wait(1)
-        self.play(Indicate(shapes[2][1], color=LIGHT_RED_COLOR, run_time=2))
-        self.wait(0.7)
-        self.play(AlmostFadeOut(shapes[2][1]), FadeOut(text_1), run_time=0.7)
+        self.wait(2.4)
+        self.play(Indicate(shapes[2][1], color=LIGHT_RED_COLOR, run_time=1.5))
+        self.wait(0.3)
+        self.play(AlmostFadeOut(shapes[2][1]), run_time=0.7)
         self.wait(1)
         self.play(
             FadeOut(shapes[0][0], run_time=0.6),
@@ -118,6 +91,6 @@ class Polygons(Scene):
             Transform(shapes[4][0], polygons[1][2]),
             Transform(shapes[4][1], polygons[2][0]),
         )
-        self.wait(3)
+        self.wait(4)
         self.play(FadeOut(*self.mobjects))
         self.remove(*self.mobjects)
