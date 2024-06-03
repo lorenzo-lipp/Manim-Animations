@@ -52,9 +52,9 @@ class Length(Scene):
         self.play(AnimateFromLeft(camp))
         self.wait(1)
         self.play(FadeIn(height), run_time=0.8)
-        self.wait(2)
+        self.wait(1.7)
         self.play(Write(measurement_text))
-        self.wait(2)
+        self.wait(1.3)
         self.play(
             Transform(measurement_text[0], Tex("Largura", color=LIGHT_RED_COLOR).scale(2).move_to(measurement_text[0])),
             Transform(height, width)
