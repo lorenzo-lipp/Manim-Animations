@@ -28,6 +28,6 @@ class Introduction(Scene):
 
         self.play(AnimateFromLeft(squares), rate_func=rate_functions.ease_out_bounce, run_time=1.2)
         self.play(GrowFromCenter(title), run_time=0.7)
-        self.wait(2)
-        self.play(AnimateToLeft(*self.mobjects), run_time=0.5)
+        self.wait(1.5)
+        self.play(AnimateToLeft(*self.mobjects), run_time=0.7)
         self.remove(*self.mobjects)

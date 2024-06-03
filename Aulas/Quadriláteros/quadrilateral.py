@@ -50,13 +50,7 @@ class Quadrilateral(Scene):
             angles.add(Line(quadrilateral.get_all_points()[10], quadrilateral.get_all_points()[11], color=BLACK))
             angles.add(Line(quadrilateral.get_all_points()[12], quadrilateral.get_all_points()[13], color=BLACK))
 
-        self.play(DrawBorderThenFill(quadrilaterals[0]))
-        self.wait(1)
-        self.play(TransformFromCopy(quadrilaterals[0], quadrilaterals[1]))
-        self.wait(1)
-        self.play(TransformFromCopy(quadrilaterals[1], quadrilaterals[2]))
-        self.wait(1)
-        self.play(TransformFromCopy(quadrilaterals[2], quadrilaterals[3]))
+        self.play(DrawBorderThenFill(quadrilaterals))
         self.wait(1)
         self.play(FadeIn(top_edges))
         self.wait(0.3)
@@ -65,13 +59,10 @@ class Quadrilateral(Scene):
         self.play(Transform(top_edges, bottom_edges))
         self.wait(0.3)
         self.play(Transform(top_edges, left_edges))
-        self.wait(1)
+        self.wait(0.3)
         self.play(FadeOut(top_edges))
         self.wait(0.5)
-        self.play(LaggedStart(
-            *[FadeIn(angles[8*i:8*i+8]) for i in range(4)], 
-            lag_ratio=0.8
-        ))
-        self.wait(1)
+        self.play(FadeIn(angles))
+        self.wait(1.4)
         self.play(AnimateToLeft(*self.mobjects))
         self.remove(*self.mobjects)
