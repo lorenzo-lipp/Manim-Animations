@@ -16,7 +16,7 @@ class Introduction(Scene):
         triangles = VGroup(
             *[
                 VGroup(*[
-                    Triangle(color=colors[(2 * j + i) % 6], stroke_width=0, fill_opacity=1).rotate((i % 2) * 180 * DEGREES)
+                    Triangle(color=colors[(2 * j + i) % 6], stroke_width=3, fill_opacity=0.85).rotate((i % 2) * 180 * DEGREES)
                     for i in range(int(config.frame_width + 3))
                 ]).arrange(RIGHT, buff=-triangle_size/2)
                 for j in range(int(config.frame_height))
@@ -24,7 +24,7 @@ class Introduction(Scene):
         ).arrange(DOWN, buff=0)
 
         self.play(FadeIn(triangles))
-        self.play(Write(title), run_time=0.7)
+        self.play(SpinInFromNothing(title), run_time=0.7)
         self.wait(1.5)
         self.play(FadeOut(*self.mobjects), run_time=0.7)
         self.remove(*self.mobjects)

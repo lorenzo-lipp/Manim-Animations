@@ -41,30 +41,30 @@ class NonTriangles(Scene):
             VGroup(Tex("É fechada", color=LIGHT_GREEN_COLOR), Arrow(start=UP, end=0.5 * DOWN, color=LIGHT_GREEN_COLOR))
                 .arrange(DOWN, buff=0.3)
                 .next_to(triangle, UP, buff=0.3),
-            VGroup(Tex("Não é fechada", color=LIGHT_RED_COLOR), Arrow(start=UP, end=0.5 * DOWN, color=LIGHT_RED_COLOR))
+            VGroup(Tex("É aberta", color=LIGHT_RED_COLOR), Arrow(start=UP, end=0.5 * DOWN, color=LIGHT_RED_COLOR))
                 .arrange(DOWN, buff=0.3)
                 .next_to(open_fig, UP, buff=0.3)
         )
 
         self.play(AnimateFromLeft(triangle))
-        self.wait(0.8)
-        self.play(TransformFromCopy(triangle, tridimensional, run_time=0.7))
-        self.wait(0.7)
-        self.play(Write(text_1), run_time=1)
-        self.wait(1)
-        self.play(FadeOut(text_1, tridimensional, run_time=0.5))
         self.wait(0.5)
+        self.play(TransformFromCopy(triangle, tridimensional, run_time=0.7))
+        self.wait(0.5)
+        self.play(Write(text_1), run_time=1)
+        self.wait(1.5)
+        self.play(FadeOut(text_1, tridimensional, run_time=0.5))
+        self.wait(0.4)
         self.play(TransformFromCopy(triangle, open_fig, run_time=0.7))
-        self.play(open_fig[2].animate.rotate(5 * DEGREES, about_point=open_fig[2].get_end()), run_time=0.7)
-        self.wait(0.7)
+        self.play(open_fig[2].animate.rotate(5 * DEGREES, about_point=open_fig[2].get_end()), run_time=0.6)
+        self.wait(0.5)
         self.play(Write(text_2), run_time=1)
-        self.wait(1)
+        self.wait(1.5)
         self.play(FadeOut(text_2, open_fig, run_time=0.5))
         self.wait(0.5)
         self.play(triangle.animate.shift(1.5 * RIGHT).scale(2), run_time=0.7)
 
         stroke_1 = VGroup(
-            Line(triangle.points[0], triangle.points[3], color=LIGHT_BLUE_COLOR).scale(6),
+            Line(triangle.points[0], triangle.points[3], color=LIGHT_BLUE_COLOR),
             Dot(triangle.points[0], color=LIGHT_BLUE_COLOR),
             Dot(triangle.points[3], color=LIGHT_BLUE_COLOR)
         )
@@ -74,7 +74,7 @@ class NonTriangles(Scene):
                 .shift(0.4 * LEFT + 0.2 * UP)
         )
         stroke_2 = VGroup(
-            Line(triangle.points[3], triangle.points[7], color=LIGHT_RED_COLOR).scale(4),
+            Line(triangle.points[3], triangle.points[7], color=LIGHT_RED_COLOR),
             Dot(triangle.points[3], color=LIGHT_RED_COLOR),
             Dot(triangle.points[7], color=LIGHT_RED_COLOR)
         )
@@ -83,7 +83,7 @@ class NonTriangles(Scene):
             .next_to(stroke_2[0], DOWN, 0.2)
         )
         stroke_3 = VGroup(
-            Line(triangle.points[7], triangle.points[11], color=LIGHT_PURPLE_COLOR).scale(6),
+            Line(triangle.points[7], triangle.points[11], color=LIGHT_PURPLE_COLOR),
             Dot(triangle.points[7], color=LIGHT_PURPLE_COLOR),
             Dot(triangle.points[11], color=LIGHT_PURPLE_COLOR)
         )
@@ -95,9 +95,9 @@ class NonTriangles(Scene):
 
         self.play(FadeIn(stroke_1),run_time=0.7)
         self.wait(0.8)
-        self.play(Transform(stroke_1, stroke_2))
+        self.play(Transform(stroke_1, stroke_2), run_time=0.7)
         self.wait(0.8)
-        self.play(Transform(stroke_1, stroke_3))
-        self.wait(2)
+        self.play(Transform(stroke_1, stroke_3), run_time=0.7)
+        self.wait(1.5)
         self.play(FadeOut(*self.mobjects))
         self.remove(*self.mobjects)
