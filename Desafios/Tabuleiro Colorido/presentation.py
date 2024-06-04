@@ -9,7 +9,7 @@ class Presentation(Scene):
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
 
-        background = Square(6, color="#C0C0C0", fill_opacity=1, stroke_width=0)
+        background = Square(6.25, color="#DDDDDD", fill_opacity=1, stroke_width=0)
         grid = VGroup(
             VGroup(
                 Piece(color="#A0A0A0", fill_color=WHITE),
@@ -54,7 +54,7 @@ class Presentation(Scene):
         blue_fixed.move_to(grid[3][0])
         red_fixed.move_to(grid[2][2])
 
-        self.add(background, grid, red_fixed, purple_fixed, green_fixed, blue_fixed, bottom_pieces)
+        self.play(AnimateFromLeft(background, grid, red_fixed, purple_fixed, green_fixed, blue_fixed, bottom_pieces))
         self.wait(1)
         self.play(
             grid[0][0].animate.set(fill_color="#AEF2B8"),
@@ -79,6 +79,6 @@ class Presentation(Scene):
             grid[2][1].animate.set(fill_color=WHITE),
             run_time=0.7
         )
-        self.wait(2)
+        self.wait(3)
         self.play(FadeOut(*self.mobjects))
         self.remove(*self.mobjects)
