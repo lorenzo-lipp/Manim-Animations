@@ -1,47 +1,35 @@
 ## Introduction
 
-<img src="./final_files/Introduction.gif" height="720px">
+<video src="./final_files/Introduction.mp4" height="720px" controls loop></video>
 
 ## Division By Six
 
-<img src="./final_files/DivisionBySix.gif" height="720px">
+<video src="./final_files/DivisionBySix.mp4" height="720px" controls loop></video>
 
 ## Division By Five
 
-<img src="./final_files/DivisionByFive.gif" height="720px">
+<video src="./final_files/DivisionByFive.mp4" height="720px" controls loop></video>
 
 ## Division By Four
 
-<img src="./final_files/DivisionByFour.gif" height="720px">
+<video src="./final_files/DivisionByFour.mp4" height="720px" controls loop></video>
 
 ## Division By Three
 
-<img src="./final_files/DivisionByThree.gif" height="720px">
+<video src="./final_files/DivisionByThree.mp4" height="720px" controls loop></video>
 
 ## Division By Two
 
-<img src="./final_files/DivisionByTwo.gif" height="720px">
+<video src="./final_files/DivisionByTwo.mp4" height="720px" controls loop></video>
 
 ## Division By One
 
-<img src="./final_files/DivisionByOne.gif" height="720px">
+<video src="./final_files/DivisionByOne.mp4" height="720px" controls loop></video>
 
 ## Six Divisors
 
-<img src="./final_files/SixDivisors.gif" height="720px">
-
-## Dividing Candy
-
-<img src="./final_files/DividingCandy.gif" height="720px">
-
-## Ten Divisors
-
-<img src="./final_files/TenDivisors.gif" height="720px">
+<video src="./final_files/SixDivisors.mp4" height="720px" controls loop></video>
 
 ## Geogebra
 
-<img src="./final_files/Geogebra.gif" height="720px">
-
-## Logo
-
-<img src="./final_files/Logo.gif" height="720px">
+<video src="./final_files/Geogebra.mp4" height="720px" controls loop></video>
