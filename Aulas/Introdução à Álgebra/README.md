@@ -1,31 +1,27 @@
 ## Introduction
 
-<img src="./final_files/Introduction.gif" height="720px">
+<video src="./final_files/Introduction.mp4" height="720px" controls loop></video>
 
 ## Algebra One
 
-<img src="./final_files/AlgebraOne.gif" height="720px">
+<video src="./final_files/AlgebraOne.mp4" height="720px" controls loop></video>
 
 ## Algebra Two
 
-<img src="./final_files/AlgebraTwo.gif" height="720px">
+<video src="./final_files/AlgebraTwo.mp4" height="720px" controls loop></video>
 
 ## Xonival
 
-<img src="./final_files/Xonival.gif" height="720px">
+<video src="./final_files/Xonival.mp4" height="720px" controls loop></video>
 
 ## Symbols
 
-<img src="./final_files/Symbols.gif" height="720px">
+<video src="./final_files/Symbols.mp4" height="720px" controls loop></video>
 
 ## Algebra With Letters
 
-<img src="./final_files/AlgebraWithLetters.gif" height="720px">
+<video src="./final_files/AlgebraWithLetters.mp4" height="720px" controls loop></video>
 
 ## Geogebra
 
-<img src="./final_files/Geogebra.gif" height="720px">
-
-## Logo
-
-<img src="./final_files/Logo.gif" height="720px">
+<video src="./final_files/Geogebra.mp4" height="720px" controls loop></video>
