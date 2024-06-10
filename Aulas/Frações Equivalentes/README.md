@@ -1,31 +1,27 @@
 ## Introduction
 
-<img src="./final_files/Introduction.gif" height="720px">
+<video src="./final_files/Introduction.mp4" height="720px" controls loop></video>
 
 ## Equivalent Pizzas
 
-<img src="./final_files/EquivalentPizzas.gif" height="720px">
+<video src="./final_files/EquivalentPizzas.mp4" height="720px" controls loop></video>
 
 ## Equivalent Crackers
 
-<img src="./final_files/EquivalentCrackers.gif" height="720px">
+<video src="./final_files/EquivalentCrackers.mp4" height="720px" controls loop></video>
 
 ## Multiplying Fractions
 
-<img src="./final_files/MultiplyingFractions.gif" height="720px">
+<video src="./final_files/MultiplyingFractions.mp4" height="720px" controls loop></video>
 
 ## Multiplying Non Equivalent
 
-<img src="./final_files/MultiplyingNonEquivalent.gif" height="720px">
+<video src="./final_files/MultiplyingNonEquivalent.mp4" height="720px" controls loop></video>
 
 ## Multiplying Two Steps
 
-<img src="./final_files/MultiplyingTwoSteps.gif" height="720px">
+<video src="./final_files/MultiplyingTwoSteps.mp4" height="720px" controls loop></video>
 
 ## Geogebra
 
-<img src="./final_files/Geogebra.gif" height="720px">
-
-## Logo
-
-<img src="./final_files/Logo.gif" height="720px">
+<video src="./final_files/Geogebra.mp4" height="720px" controls loop></video>
