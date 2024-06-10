@@ -1,19 +1,15 @@
 ## Introduction
 
-<img src="./final_files/Introduction.gif" height="720px">
+<video src="./final_files/Introduction.mp4" height="720px" controls loop></video>
 
 ## Graph One
 
-<img src="./final_files/GraphOne.gif" height="720px">
+<video src="./final_files/GraphOne.mp4" height="720px" controls loop></video>
 
 ## Graph Two
 
-<img src="./final_files/GraphTwo.gif" height="720px">
+<video src="./final_files/GraphTwo.mp4" height="720px" controls loop></video>
 
 ## Graph Three
 
-<img src="./final_files/GraphThree.gif" height="720px">
-
-## Logo
-
-<img src="./final_files/Logo.gif" height="720px">
+<video src="./final_files/GraphThree.mp4" height="720px" controls loop></video>
