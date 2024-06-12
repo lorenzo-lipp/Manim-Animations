@@ -25,6 +25,7 @@
 | Copiando Formas | Sim |
 | Desenho na Malha | Sim |
 | Doces ou Travessuras | Não |
+| Labirinto | Não |
 | Peça Quebrada | Não |
 | Peças Giratórias | Sim |
 | Subida Escorregadia | Não |
