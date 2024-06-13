@@ -25,6 +25,7 @@
 | Copiando Formas | Sim |
 | Desenho na Malha | Sim |
 | Doces ou Travessuras | Não |
+| Dominó das Frações | Não |
 | Labirinto | Não |
 | Peça Quebrada | Não |
 | Peças Giratórias | Sim |
