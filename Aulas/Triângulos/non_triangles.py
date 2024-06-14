@@ -12,15 +12,24 @@ class NonTriangles(Scene):
         triangle = Triangle(color=LIGHT_GREEN_COLOR, fill_opacity=0.8)
         tridimensional = VGroup(
             Triangle(color=LIGHT_GREEN_COLOR, fill_opacity=0.8)
-                .shift(0.3 * RIGHT),
+                .shift(0.2 * RIGHT),
             Polygon(
                 triangle.points[0], 
-                triangle.points[0] + 0.3 * RIGHT,
-                triangle.points[3] + 0.3 * RIGHT,
-                triangle.points[3],
+                triangle.points[0] + 0.2 * RIGHT,
+                triangle.points[3] + 0.2 * RIGHT,
+                triangle.points[3] + 0.1 * LEFT + 0.15 * DOWN,
                 color=LIGHT_GREEN_COLOR,
                 fill_opacity=0.6
-            )
+            ),
+            Polygon(
+                triangle.points[7] + 0.2 * RIGHT,
+                triangle.points[3] + 0.2 * RIGHT, 
+                triangle.points[3] + 0.1 * LEFT + 0.15 * DOWN,
+                triangle.points[7] + 0.15 * DOWN,
+                color=LIGHT_GREEN_COLOR,
+                fill_opacity=0.6,
+                joint_type=LineJointType.ROUND
+            ),
         )
         tridimensional.shift(1.5 * RIGHT)
         open_fig = VGroup(
@@ -55,7 +64,7 @@ class NonTriangles(Scene):
         self.play(FadeOut(text_1, tridimensional, run_time=0.5))
         self.wait(0.4)
         self.play(TransformFromCopy(triangle, open_fig, run_time=0.7))
-        self.play(open_fig[2].animate.rotate(5 * DEGREES, about_point=open_fig[2].get_end()), run_time=0.6)
+        self.play(open_fig[2].animate.rotate(10 * DEGREES, about_point=open_fig[2].get_end()), run_time=0.6)
         self.wait(0.5)
         self.play(Write(text_2), run_time=1)
         self.wait(1.5)
@@ -68,29 +77,15 @@ class NonTriangles(Scene):
             Dot(triangle.points[0], color=LIGHT_BLUE_COLOR),
             Dot(triangle.points[3], color=LIGHT_BLUE_COLOR)
         )
-        stroke_1.add(
-            Tex("1", color=LIGHT_BLUE_COLOR)
-                .move_to(Line(triangle.points[0], triangle.points[3]))
-                .shift(0.4 * LEFT + 0.2 * UP)
-        )
         stroke_2 = VGroup(
             Line(triangle.points[3], triangle.points[7], color=LIGHT_RED_COLOR),
             Dot(triangle.points[3], color=LIGHT_RED_COLOR),
             Dot(triangle.points[7], color=LIGHT_RED_COLOR)
         )
-        stroke_2.add(
-            Tex("2", color=LIGHT_RED_COLOR)
-            .next_to(stroke_2[0], DOWN, 0.2)
-        )
         stroke_3 = VGroup(
             Line(triangle.points[7], triangle.points[11], color=LIGHT_PURPLE_COLOR),
             Dot(triangle.points[7], color=LIGHT_PURPLE_COLOR),
             Dot(triangle.points[11], color=LIGHT_PURPLE_COLOR)
-        )
-        stroke_3.add(
-            Tex("3", color=LIGHT_PURPLE_COLOR)
-            .move_to(Line(triangle.points[7], triangle.points[11]))
-            .shift(0.4 * RIGHT + 0.2 * UP)
         )
 
         self.play(FadeIn(stroke_1),run_time=0.7)
