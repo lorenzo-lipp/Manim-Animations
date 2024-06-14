@@ -59,25 +59,21 @@ class NonQuadrilaterals(Scene):
             Dot(UP + 2 * LEFT, color=LIGHT_BLUE_COLOR),
             Dot(UP + 2 * RIGHT, color=LIGHT_BLUE_COLOR)
         )
-        stroke_1.add(Tex("1", color=LIGHT_BLUE_COLOR).next_to(stroke_1[0], UP, 0.2))
         stroke_2 = VGroup(
             Line(UP + 2 * RIGHT, DOWN + 2 * RIGHT, color=LIGHT_RED_COLOR),
             Dot(UP + 2 * RIGHT, color=LIGHT_RED_COLOR),
             Dot(DOWN + 2 * RIGHT, color=LIGHT_RED_COLOR)
         )
-        stroke_2.add(Tex("2", color=LIGHT_RED_COLOR).next_to(stroke_2[0], RIGHT, 0.2))
         stroke_3 = VGroup(
             Line(DOWN + 2 * RIGHT, DOWN + 2 * LEFT, color=LIGHT_PURPLE_COLOR),
             Dot(DOWN + 2 * RIGHT, color=LIGHT_PURPLE_COLOR),
             Dot(DOWN + 2 * LEFT, color=LIGHT_PURPLE_COLOR)
         )
-        stroke_3.add(Tex("3", color=LIGHT_PURPLE_COLOR).next_to(stroke_3[0], DOWN, 0.2))
         stroke_4 = VGroup(
             Line(DOWN + 2 * LEFT, UP + 2 * LEFT, color=LIGHT_ORANGE_COLOR),
             Dot(DOWN + 2 * LEFT, color=LIGHT_ORANGE_COLOR),
             Dot(UP + 2 * LEFT, color=LIGHT_ORANGE_COLOR)
         )
-        stroke_4.add(Tex("4", color=LIGHT_ORANGE_COLOR).next_to(stroke_4[0], LEFT, 0.2))
 
         self.play(AnimateFromLeft(quadrilateral))
         self.wait(0.5)

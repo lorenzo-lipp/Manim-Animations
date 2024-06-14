@@ -12,11 +12,11 @@
 | O que são Polígonos | Não |
 | Perímetro | Não |
 | Probabilidade | Não |
-| Quadriláteros | Não |
+| Quadriláteros | Sim |
 | Relógio de Ponteiros | Não |
 | Sequência de Figuras | Sim |
 | Sequências Numéricas | Sim |
-| Triângulos | Não |
+| Triângulos | Sim |
 
 # Desafios
 
