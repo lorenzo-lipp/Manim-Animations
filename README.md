@@ -29,7 +29,7 @@
 | Labirinto | Não |
 | Peça Quebrada | Não |
 | Peças Giratórias | Sim |
-| Subida Escorregadia | Não |
+| Subida Escorregadia | Sim |
 | Tabuleiro Colorido | Não |
 | Troca de Etiquetas | Sim |
 | Trocando Adesivos | Sim |
