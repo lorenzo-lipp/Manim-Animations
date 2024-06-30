@@ -72,10 +72,20 @@ class WhatTimeIsIt(Scene):
         self.play(*clock.set_time(0, 55))
         self.wait(4)
         self.play(FadeIn(time_3), run_time=0.7)
-        self.wait(4)
+
+        dotted = DashedLine(clock.get_center(), clock.get_top(), color=LIGHT_RED_COLOR)
+        dotted.rotate(angle=-27.5 * DEGREES, about_point=clock.get_center())
+
+        self.play(Create(dotted))
+        self.wait(2)
+        self.play(FadeOut(dotted))
         self.remove(time_3)
         self.add(time)
         self.play(*clock.set_time(1, 55))
-        self.wait(2)
+
+        dotted.rotate(angle=-30 * DEGREES, about_point=clock.get_center())
+
+        self.play(Create(dotted))
+        self.play(FadeOut(dotted))
         self.play(FadeOut(*self.mobjects), run_time=0.7)
         self.remove(*self.mobjects)
