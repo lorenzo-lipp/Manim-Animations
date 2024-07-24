@@ -13,7 +13,7 @@
 | Perímetro | Não |
 | Probabilidade | Não |
 | Quadriláteros | Sim |
-| Relógio de Ponteiros | Não |
+| Relógio de Ponteiros | Sim |
 | Sequência de Figuras | Sim |
 | Sequências Numéricas | Sim |
 | Triângulos | Sim |
@@ -30,6 +30,6 @@
 | Peça Quebrada | Não |
 | Peças Giratórias | Sim |
 | Subida Escorregadia | Sim |
-| Tabuleiro Colorido | Não |
+| Tabuleiro Colorido | Sim |
 | Troca de Etiquetas | Sim |
 | Trocando Adesivos | Sim |
