@@ -2,34 +2,34 @@
 
 | Nome | Finalizado |
 |------|-----------|
-| Divisores | Sim |
-| Frações Equivalentes | Sim |
-| Grandezas | Não |
-| Interpretação de Gráficos | Sim |
-| Introdução à Álgebra | Sim |
-| Números Primos | Sim |
-| O que é Fração | Sim |
-| O que são Polígonos | Não |
-| Perímetro | Não |
-| Probabilidade | Não |
-| Quadriláteros | Sim |
-| Relógio de Ponteiros | Sim |
-| Sequência de Figuras | Sim |
-| Sequências Numéricas | Sim |
-| Triângulos | Sim |
+| Divisores | ✔️ |
+| Frações Equivalentes | ✔️ |
+| Grandezas | ❌ |
+| Interpretação de Gráficos | ✔️ |
+| Introdução à Álgebra | ✔️ |
+| Números Primos | ✔️ |
+| O que é Fração | ✔️ |
+| O que são Polígonos | ❌ |
+| Perímetro | ❌ |
+| Probabilidade | ❌ |
+| Quadriláteros | ✔️ |
+| Relógio de Ponteiros | ✔️ |
+| Sequência de Figuras | ✔️ |
+| Sequências Numéricas | ✔️ |
+| Triângulos | ✔️ |
 
 # Desafios
 
 | Nome | Finalizado |
 |------|-----------|
-| Copiando Formas | Sim |
-| Desenho na Malha | Sim |
-| Doces ou Travessuras | Não |
-| Dominó das Frações | Não |
-| Labirinto | Não |
-| Peça Quebrada | Não |
-| Peças Giratórias | Sim |
-| Subida Escorregadia | Sim |
-| Tabuleiro Colorido | Sim |
-| Troca de Etiquetas | Sim |
-| Trocando Adesivos | Sim |
+| Copiando Formas | ✔️ |
+| Desenho na Malha | ✔️ |
+| Doces ou Travessuras | ❌ |
+| Dominó das Frações | ❌ |
+| Labirinto | ❌ |
+| Peça Quebrada | ❌ |
+| Peças Giratórias | ✔️ |
+| Subida Escorregadia | ✔️ |
+| Tabuleiro Colorido | ✔️ |
+| Troca de Etiquetas | ✔️ |
+| Trocando Adesivos | ✔️ |

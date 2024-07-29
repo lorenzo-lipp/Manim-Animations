@@ -17,5 +17,6 @@ class Presentation(Scene):
 
         self.play(FadeIn(pieces))
         self.play(pieces[2][0].animate.move_to(pieces[1][1][0]))
-        self.wait(1)
+        self.wait(4)
+        self.play(FadeOut(*self.mobjects))
         self.remove(*self.mobjects)

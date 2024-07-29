@@ -43,31 +43,31 @@ def Board():
     return VGroup(
                 VGroup(
                     VGroup(
-                    DashedVMobject(RoundedRectangle(0.2, width=3, height=1.5, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
+                    DashedVMobject(RoundedRectangle(0.4, width=3, height=1.5, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
                     DashedLine(0.6 * UP, 0.6 * DOWN, color=LIGHT_GRAY_COLOR)
                     ),
                     VGroup(
-                        DashedVMobject(RoundedRectangle(0.2, width=3, height=1.5, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
+                        DashedVMobject(RoundedRectangle(0.4, width=3, height=1.5, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
                         DashedLine(0.6 * UP, 0.6 * DOWN, color=LIGHT_GRAY_COLOR)
                     ),
                 ).arrange(RIGHT, 0.3),  
                 VGroup(
                     VGroup(
-                    DashedVMobject(RoundedRectangle(0.2, width=1.5, height=3, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
+                    DashedVMobject(RoundedRectangle(0.4, width=1.5, height=3, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
                     DashedLine(0.6 * LEFT, 0.6 * RIGHT, color=LIGHT_GRAY_COLOR)
                     ),
                     VGroup(
-                        DashedVMobject(RoundedRectangle(0.2, width=1.5, height=3, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
+                        DashedVMobject(RoundedRectangle(0.4, width=1.5, height=3, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
                         DashedLine(0.6 * LEFT, 0.6 * RIGHT, color=LIGHT_GRAY_COLOR)
                     ),
                 ).arrange(RIGHT, 3.2),  
                 VGroup(
                     VGroup(
-                    DashedVMobject(RoundedRectangle(0.2, width=3, height=1.5, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
+                    DashedVMobject(RoundedRectangle(0.4, width=3, height=1.5, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
                     DashedLine(0.6 * UP, 0.6 * DOWN, color=LIGHT_GRAY_COLOR)
                     ),
                     VGroup(
-                        DashedVMobject(RoundedRectangle(0.2, width=3, height=1.5, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
+                        DashedVMobject(RoundedRectangle(0.4, width=3, height=1.5, color=LIGHT_GRAY_COLOR, fill_opacity=0.3), num_dashes=30),
                         DashedLine(0.6 * UP, 0.6 * DOWN, color=LIGHT_GRAY_COLOR)
                     ),
                 ).arrange(RIGHT, 0.3),            
@@ -76,9 +76,9 @@ def Board():
 def TopPieces():
     return VGroup(
                 VGroup(
-                    RoundedRectangle(0.2, width=1.5, height=3, color=SAND_COLOR, fill_opacity=0.3),
-                    Line(0.6 * LEFT, 0.6 * RIGHT, color=SAND_COLOR),
-                    MathTex(r"{6}\over{10}", color=BLACK).shift(0.8 * DOWN),
+                    RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
+                    Line(0.6 * LEFT, 0.6 * RIGHT, color="#edebd5"),
+                    MathTex(r"{6}\over{10}", color=BLACK).shift(0.75 * DOWN),
                     VGroup(
                         RegularPolygon(5, radius=0.25, color=LIGHT_PINK, stroke_color=BLACK, fill_opacity=1),
                         RegularPolygon(5, radius=0.25, color=LIGHT_PINK, stroke_color=BLACK, fill_opacity=1)
@@ -99,18 +99,18 @@ def TopPieces():
                     ).shift(0.75 * UP)
                 ),
                 VGroup(
-                    RoundedRectangle(0.2, width=1.5, height=3, color=SAND_COLOR, fill_opacity=0.3),
-                    Line(0.6 * LEFT, 0.6 * RIGHT, color=SAND_COLOR),
-                    MathTex(r"{2}\over{3}", color=BLACK).shift(0.8 * DOWN),
+                    RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
+                    Line(0.6 * LEFT, 0.6 * RIGHT, color="#edebd5"),
+                    MathTex(r"{2}\over{3}", color=BLACK).shift(0.75 * DOWN),
                     RoundedRectangle(0.1, height=0.2, width=1, color=WHITE, stroke_color=BLACK, fill_opacity=1).shift(0.4 * UP),
                     RoundedRectangle(0.1, height=0.2, width=1, color=LIGHT_RED_COLOR, stroke_color=BLACK, fill_opacity=1).shift(0.4 * UP + 0.2 * UP),
                     RoundedRectangle(0.1, height=0.2, width=1, color=WHITE, stroke_color=BLACK, fill_opacity=1).shift(0.4 * UP + 0.4 * UP),
                     RoundedRectangle(0.1, height=0.2, width=1, color=LIGHT_RED_COLOR, stroke_color=BLACK, fill_opacity=1).shift(0.4 * UP + 0.6 * UP)
                 ),
                 VGroup(
-                    RoundedRectangle(0.2, width=1.5, height=3, color=SAND_COLOR, fill_opacity=0.3),
-                    Line(0.6 * LEFT, 0.6 * RIGHT, color=SAND_COLOR),
-                    MathTex(r"{1}\over{4}", color=BLACK).shift(0.8 * DOWN),
+                    RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
+                    Line(0.6 * LEFT, 0.6 * RIGHT, color="#edebd5"),
+                    MathTex(r"{1}\over{4}", color=BLACK).shift(0.75 * DOWN),
                     RoundedRectangle(0.05, width=0.3, height=0.3, color=AQUA_GREEN_COLOR, stroke_color=BLACK, fill_opacity=1).shift(0.7 * UP + 0.3 * UP + 0.3 * LEFT),
                     RoundedRectangle(0.05, width=0.3, height=0.3, color=WHITE, stroke_color=BLACK, fill_opacity=1).shift(0.7 * UP + 0.3 * UP),
                     RoundedRectangle(0.05, width=0.3, height=0.3, color=AQUA_GREEN_COLOR, stroke_color=BLACK, fill_opacity=1).shift(0.7 * UP + 0.3 * UP + 0.3 * RIGHT),
@@ -122,9 +122,9 @@ def TopPieces():
                     RoundedRectangle(0.05, width=0.3, height=0.3, color=AQUA_GREEN_COLOR, stroke_color=BLACK, fill_opacity=1).shift(0.7 * UP + 0.3 * DOWN + 0.3 * RIGHT),
                 ),
                 VGroup(
-                    RoundedRectangle(0.2, width=1.5, height=3, color=SAND_COLOR, fill_opacity=0.3),
-                    Line(0.6 * LEFT, 0.6 * RIGHT, color=SAND_COLOR),
-                    MathTex(r"{5}\over{9}", color=BLACK).shift(0.8 * DOWN),
+                    RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
+                    Line(0.6 * LEFT, 0.6 * RIGHT, color="#edebd5"),
+                    MathTex(r"{5}\over{9}", color=BLACK).shift(0.75 * DOWN),
                     RoundedRectangle(0.1, height=1, width=0.2, color=WHITE, stroke_color=BLACK, fill_opacity=1).shift(0.7 * UP),
                     RoundedRectangle(0.1, height=1, width=0.2, color=WHITE, stroke_color=BLACK, fill_opacity=1).shift(0.7 * UP + 0.2 * RIGHT),
                     RoundedRectangle(0.1, height=1, width=0.2, color=WHITE, stroke_color=BLACK, fill_opacity=1).shift(0.7 * UP + 0.4 * RIGHT),
@@ -138,9 +138,9 @@ def BottomPieces():
     
     return VGroup(
                 VGroup(
-                    RoundedRectangle(0.2, width=1.5, height=3, color=SAND_COLOR, fill_opacity=0.3),
-                    Line(0.6 * LEFT, 0.6 * RIGHT, color=SAND_COLOR),
-                    MathTex(r"{3}\over{6}", color=BLACK).shift(0.8 * DOWN),
+                    RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
+                    Line(0.6 * LEFT, 0.6 * RIGHT, color="#edebd5"),
+                    MathTex(r"{3}\over{6}", color=BLACK).shift(0.75 * DOWN),
                     VGroup(
                         Circle(0.5, color=WHITE, stroke_color=BLACK, fill_opacity=1),
                         Sector(0.5, angle=90 * DEGREES, color=AQUA_GREEN_COLOR, stroke_width=DEFAULT_STROKE_WIDTH, stroke_color=BLACK, fill_opacity=1),
@@ -149,9 +149,9 @@ def BottomPieces():
                     ).shift(0.7 * UP)
                 ),
                 VGroup(
-                    RoundedRectangle(0.2, width=1.5, height=3, color=SAND_COLOR, fill_opacity=0.3),
-                    Line(0.6 * LEFT, 0.6 * RIGHT, color=SAND_COLOR),
-                    MathTex(r"{2}\over{5}", color=BLACK).shift(0.8 * DOWN),
+                    RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
+                    Line(0.6 * LEFT, 0.6 * RIGHT, color="#edebd5"),
+                    MathTex(r"{2}\over{5}", color=BLACK).shift(0.75 * DOWN),
                     VGroup(
                         RoundedRectangle(0.05, width=0.3, height=0.3, color=WHITE, stroke_color=BLACK, fill_opacity=1).shift(0.3 * UP + 0.3 * LEFT),
                         RoundedRectangle(0.05, width=0.3, height=0.3, color=LIGHT_PINK, stroke_color=BLACK, fill_opacity=1).shift(0.3 * UP + 0.3 * RIGHT),
@@ -161,9 +161,9 @@ def BottomPieces():
                     ).shift(0.7 * UP)
                 ),
                 VGroup(
-                    RoundedRectangle(0.2, width=1.5, height=3, color=SAND_COLOR, fill_opacity=0.3),
-                    Line(0.6 * LEFT, 0.6 * RIGHT, color=SAND_COLOR),
-                    MathTex(r"{4}\over{5}", color=BLACK).shift(0.8 * DOWN),
+                    RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
+                    Line(0.6 * LEFT, 0.6 * RIGHT, color="#edebd5"),
+                    MathTex(r"{4}\over{5}", color=BLACK).shift(0.75 * DOWN),
                     VGroup(
                         Circle(0.5, color=WHITE, stroke_color=BLACK, fill_opacity=1),
                         Sector(0.5, angle=90 * DEGREES, color=ORANGE, stroke_width=DEFAULT_STROKE_WIDTH, stroke_color=BLACK, fill_opacity=1),
@@ -172,9 +172,9 @@ def BottomPieces():
                     ).shift(0.7 * UP)
                 ),
                 VGroup(
-                    RoundedRectangle(0.2, width=1.5, height=3, color=SAND_COLOR, fill_opacity=0.3),
-                    Line(0.6 * LEFT, 0.6 * RIGHT, color=SAND_COLOR),
-                    MathTex(r"{3}\over{5}", color=BLACK).shift(0.8 * DOWN),
+                    RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
+                    Line(0.6 * LEFT, 0.6 * RIGHT, color="#edebd5"),
+                    MathTex(r"{3}\over{5}", color=BLACK).shift(0.75 * DOWN),
                     VGroup(
                         *[
                             RegularPolygon(5, radius=0.17, color=last_piece_colors[i], stroke_color=BLACK, fill_opacity=1)
