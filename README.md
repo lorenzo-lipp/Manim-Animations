@@ -22,6 +22,7 @@
 
 | Nome | Finalizado |
 |------|-----------|
+| A Raposa, o Ganso e o Feijão | ❌ |
 | Copiando Formas | ✔️ |
 | Desenho na Malha | ✔️ |
 | Doces ou Travessuras | ❌ |
