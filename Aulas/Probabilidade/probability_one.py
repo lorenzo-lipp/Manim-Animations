@@ -51,6 +51,6 @@ class ProbabilityOne(Scene):
         self.wait(0.3)
         self.play(roulette.flash_selected(), run_time=0.7)
         self.play(roulette.flash_selected(), run_time=0.7)
-        self.wait(2)
+        self.wait(1)
         self.play(AnimateToLeft(*self.mobjects))
         self.remove(*self.mobjects)

@@ -21,8 +21,12 @@ BROWN_COLOR = "#b85842"
 def AnimateFromLeft(*mobjects):
     return Group(*mobjects).shift(9 * RIGHT).animate.shift(9 * LEFT)
 
+def AnimateFromRight(*mobjects):
+    return Group(*mobjects).shift(9 * LEFT).animate.shift(9 * RIGHT)
+
 def AnimateToLeft(*mobjects):
     return Group(*mobjects).animate.shift(9 * LEFT)
+
 
 def GeogebraLink(title, img, link, scale=0.8):
     text = Tex(r"\textbf{" + title + "}", color=DARK_BLUE_COLOR)
@@ -46,7 +50,7 @@ class Roulette(Group):
                 [0.7, -1.45, 0],
                 [-0.7, -1.45, 0],
                 [-0.35, -0.95, 0],
-                color=GRAY_C,
+                color="#9e9e9e",
                 fill_opacity=1
             ),
             Polygon(
@@ -58,7 +62,7 @@ class Roulette(Group):
                 fill_opacity=1
             )
         ]
-        self.roulette_background = Circle(radius=1.1, color=LIGHT_GRAY, fill_opacity=1)
+        self.roulette_background = Circle(radius=1.1, color="#c8c8c8", fill_opacity=1)
         self.roulette_sectors = [
             Sector(color=LIGHT_BLUE_COLOR, angle=PI / 4, start_angle=PI / 2, fill_opacity=1),
             Sector(color=LIGHT_RED_COLOR, angle=PI / 4, start_angle=PI / 2 + PI / 4, fill_opacity=1),
