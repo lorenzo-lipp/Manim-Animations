@@ -17,6 +17,7 @@ DARK_BLUE_COLOR = "#3333FF"
 DARK_PURPLE_COLOR = "#5157b9"
 SAND_COLOR = "#b3a77d"
 BROWN_COLOR = "#b85842"
+WATER_COLOR = "#64a1ef"
 
 def AnimateFromLeft(*mobjects):
     return Group(*mobjects).shift(9 * RIGHT).animate.shift(9 * LEFT)
@@ -39,45 +40,30 @@ def GeogebraLink(title, img, link, scale=0.8):
 
 def Cup():
     return Group(
-        ArcPolygonFromArcs(
-            ArcBetweenPoints(UP + 0.7 * RIGHT, UP + 0.8 * LEFT, angle=TAU/6, color=TEXT_COLOR, stroke_width=4),
-            ArcBetweenPoints(UP + 0.8 * LEFT, DOWN + 0.5 * LEFT, angle=0, color=TEXT_COLOR, stroke_width=4),
-            ArcBetweenPoints(DOWN + 0.5 * LEFT, DOWN + 0.5 * RIGHT, angle=TAU/12, color=TEXT_COLOR, stroke_width=4),
-            ArcBetweenPoints(UP + 0.7 * RIGHT, DOWN + 0.5 * RIGHT, angle=0, color=TEXT_COLOR, stroke_width=4),
-            fill_opacity=0.1,
-            fill_color=GRAY
-        ),
-        ArcPolygonFromArcs(
-            ArcBetweenPoints(UP + 0.8 * LEFT, DOWN + 0.5 * LEFT, angle=0, color=TEXT_COLOR, stroke_width=4),
-            ArcBetweenPoints(DOWN + 0.5 * LEFT, DOWN + 0.5 * RIGHT, angle=TAU/12, color=TEXT_COLOR, stroke_width=4),
-            ArcBetweenPoints(UP + 0.7 * RIGHT, DOWN + 0.5 * RIGHT, angle=0, color=TEXT_COLOR, stroke_width=4),
-            ArcBetweenPoints(UP + 0.7 * RIGHT, UP + 0.8 * LEFT, angle=-TAU/6, color=TEXT_COLOR, stroke_width=4),
-            fill_opacity=0.1,
-            fill_color=GRAY
-        ),
-        ArcBetweenPoints(UP + 0.8 * LEFT, UP + 0.7 * RIGHT, angle=TAU/6, color=TEXT_COLOR, stroke_width=4),
+        Ellipse(1.6, 0.35, color=TEXT_COLOR, stroke_width=4).shift(UP),
+        ArcBetweenPoints(UP + 0.8 * LEFT, DOWN + 0.5 * LEFT, angle=0, color=TEXT_COLOR, stroke_width=4),
+        ArcBetweenPoints(DOWN + 0.5 * LEFT, DOWN + 0.5 * RIGHT, angle=TAU/8, color=TEXT_COLOR, stroke_width=4),
+        ArcBetweenPoints(UP + 0.8 * RIGHT, DOWN + 0.5 * RIGHT, angle=0, color=TEXT_COLOR, stroke_width=4),
     ).scale(2)
 
-def Droplet():
-    return ArcPolygonFromArcs(
-        ArcBetweenPoints(0.7 * UP, 0.4 * LEFT, angle=0, color=LIGHT_BLUE_COLOR, stroke_width=4),
-        ArcBetweenPoints(0.4 * LEFT, 0.4 * RIGHT, angle=TAU/2, color=LIGHT_BLUE_COLOR, stroke_width=4),
-        ArcBetweenPoints(0.7 * UP, 0.4 * RIGHT, angle=0, color=LIGHT_BLUE_COLOR, stroke_width=4),
-        fill_opacity=1,
-        fill_color="#64a1ef",
-        color=LIGHT_BLUE_COLOR
-    )
-
 def Water(water_level):
-    return ArcPolygonFromArcs(
-        ArcBetweenPoints((water_level * 4 - 2) * UP + (water_level * 0.6 + 1) * LEFT, 2 * DOWN +  LEFT, angle=0, stroke_width=0),
-        ArcBetweenPoints(2 * DOWN + LEFT, 2 * DOWN + RIGHT, angle=TAU/12, stroke_width=0),
-        ArcBetweenPoints((water_level * 4 - 2) * UP + (water_level * 0.4 + 1) * RIGHT, 2 * DOWN + RIGHT, angle=0, stroke_width=0),
-        ArcBetweenPoints((water_level * 4 - 2) * UP + (water_level * 0.4 + 1) * RIGHT, (water_level * 4 - 2) * UP + (water_level * 0.6 + 1) * LEFT, angle=-TAU/8, stroke_width=0),
-        fill_opacity=0.8,
-        fill_color="#64a1ef",
-        stroke_width=0
-    )
+    ellipse_width = (water_level * 1.25 + 2) / 2
+    ellipse_pos = (water_level * 4 - 2) * UP / 2
+    water_angle = -TAU/(10 + water_level * 1.7)
+
+    return Group(
+        Ellipse(ellipse_width, 0.2, color=WATER_COLOR, fill_opacity=0.5, stroke_width=0)
+            .shift(ellipse_pos),
+        ArcPolygonFromArcs(
+            ArcBetweenPoints(ellipse_pos + ellipse_width * 0.5 * LEFT, DOWN + 0.5 * LEFT, angle=0, stroke_width=0),
+            ArcBetweenPoints(DOWN + 0.5 * LEFT, DOWN + 0.5 * RIGHT, angle=TAU/8, stroke_width=0),
+            ArcBetweenPoints(ellipse_pos + ellipse_width * 0.5 * RIGHT, DOWN + 0.5 * RIGHT, angle=0, stroke_width=0),
+            ArcBetweenPoints(ellipse_pos + ellipse_width * 0.5 * RIGHT, ellipse_pos + ellipse_width * 0.5 * LEFT, angle=water_angle, stroke_width=0),
+            fill_opacity=0.8,
+            fill_color=WATER_COLOR,
+            stroke_width=0
+        )
+    ).scale(2)
 
 def Balance():
     balance = Group(
