@@ -34,7 +34,7 @@ class PerimeterOne(Scene):
 
         self.play(DrawBorderThenFill(poly))
         self.play(*[Write(size) for size in sizes])
-        self.wait(2)
+        self.wait(1)
         self.play(TransformFromCopy(sizes[0][0], sum_text[0][0]))
         self.wait(0.3)
         self.play(TransformFromCopy(sizes[1][0], sum_text[0][2]))

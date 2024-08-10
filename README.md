@@ -4,13 +4,13 @@
 |------|-----------|
 | Divisores | ✔️ |
 | Frações Equivalentes | ✔️ |
-| Grandezas | ❌ |
+| Grandezas | ✔️ |
 | Interpretação de Gráficos | ✔️ |
 | Introdução à Álgebra | ✔️ |
 | Números Primos | ✔️ |
 | O que é Fração | ✔️ |
 | O que são Polígonos | ❌ |
-| Perímetro | ❌ |
+| Perímetro | ✔️ |
 | Probabilidade | ❌ |
 | Quadriláteros | ✔️ |
 | Relógio de Ponteiros | ✔️ |
