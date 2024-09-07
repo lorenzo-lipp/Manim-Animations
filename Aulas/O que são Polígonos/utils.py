@@ -210,4 +210,4 @@ def Shape14(**kwargs):
     ])
 
 def AlmostFadeOut(*mobjects):
-    return Transform(Group(*mobjects), Group(*mobjects).copy().fade(0.8))
+    return Transform(Group(*mobjects), Group(*mobjects).copy().fade(0.8).set_color(LIGHT_GRAY))

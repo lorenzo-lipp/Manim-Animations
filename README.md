@@ -7,9 +7,10 @@
 | Grandezas | ✔️ |
 | Interpretação de Gráficos | ✔️ |
 | Introdução à Álgebra | ✔️ |
+| Introdução à Equação | ❌ |
 | Números Primos | ✔️ |
 | O que é Fração | ✔️ |
-| O que são Polígonos | ❌ |
+| O que são Polígonos | ✔️ |
 | Perímetro | ✔️ |
 | Probabilidade | ❌ |
 | Quadriláteros | ✔️ |
