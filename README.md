@@ -12,7 +12,7 @@
 | O que é Fração | ✔️ |
 | O que são Polígonos | ✔️ |
 | Perímetro | ✔️ |
-| Probabilidade | ❌ |
+| Probabilidade | ✔️ |
 | Quadriláteros | ✔️ |
 | Relógio de Ponteiros | ✔️ |
 | Sequência de Figuras | ✔️ |
@@ -28,7 +28,7 @@
 | Desenho na Malha | ✔️ |
 | Doces ou Travessuras | ❌ |
 | Dominó das Frações | ❌ |
-| Labirinto | ❌ |
+| Labirinto | ✔️ |
 | Peça Quebrada | ❌ |
 | Peças Giratórias | ✔️ |
 | Subida Escorregadia | ✔️ |
