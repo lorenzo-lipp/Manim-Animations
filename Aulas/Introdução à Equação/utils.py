@@ -157,13 +157,15 @@ class PlatesBalance(Group):
                 start=1.6 * LEFT, 
                 end=1.9 * LEFT + 1.5 * DOWN, 
                 color=ORANGE, 
-                stroke_width=8
+                stroke_width=8,
+                stroke_opacity=0.5
             ),
             Line(
                 start=1.6 * LEFT, 
                 end=1.3 * LEFT + 1.5 * DOWN, 
                 color=ORANGE, 
-                stroke_width=8
+                stroke_width=8,
+                stroke_opacity=0.5
             ),
             ArcBetweenPoints(
                 start=2.1 * LEFT + 1.5 * DOWN, 
@@ -183,13 +185,15 @@ class PlatesBalance(Group):
                 start=1.6 * RIGHT, 
                 end=1.9 * RIGHT + 1.5 * DOWN, 
                 color=ORANGE, 
-                stroke_width=8
+                stroke_width=8,
+                stroke_opacity=0.5
             ),
             Line(
                 start=1.6 * RIGHT, 
                 end=1.3 * RIGHT + 1.5 * DOWN, 
                 color=ORANGE, 
-                stroke_width=8
+                stroke_width=8,
+                stroke_opacity=0.5
             ),
             ArcBetweenPoints( 
                 start=1.1 * RIGHT + 1.5 * DOWN, 
@@ -215,9 +219,9 @@ class PlatesBalance(Group):
         )
         self.center()
 
-    def set_weight(self, left_weight, right_weight):
+    def set_weights(self, left_weight, right_weight):
         """ Returns an :class:`~.AnimationGroup` that changes plates position based on weights. """
-        bigger_weight = right_weight if right_weight > left_weight else left_weight
+        bigger_weight = max(right_weight, left_weight)
         signal = -1 if bigger_weight == right_weight else 1
         total_weight = left_weight + right_weight
         total_weight = total_weight if total_weight > 0 else 1
@@ -282,3 +286,9 @@ class Grapes(ImageMobject):
     def __init__(self, scale=0.5):
         super().__init__("./assets/uva.png")
         self.scale(scale)
+
+def shift_to_left(*mobjects, dist=9):
+    return AnimationGroup(*[mobject.animate.shift(dist * LEFT) for mobject in mobjects])
+
+def shift_from_left(*mobjects, dist=9):
+    return AnimationGroup(*[mobject.shift(dist * RIGHT).animate.shift(dist * LEFT) for mobject in mobjects])
