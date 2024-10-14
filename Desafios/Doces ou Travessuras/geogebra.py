@@ -12,6 +12,6 @@ class Geogebra(Scene):
         group1 = GeogebraLink(title="Doces ou Travessuras", img="doces-ou-travessuras", link="qcm-doces", scale=0.8)
 
         self.play(group1.animate.shift(9 * LEFT), run_time=0.7)
-        self.wait(4)
+        self.wait(3)
         self.play(group1.animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)

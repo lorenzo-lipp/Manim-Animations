@@ -2,6 +2,7 @@
 
 | Nome | Finalizado |
 |------|-----------|
+| Como Resolver uma Equação | ❌ |
 | Divisores | ✔️ |
 | Frações Equivalentes | ✔️ |
 | Grandezas | ✔️ |
@@ -26,7 +27,7 @@
 | A Raposa, o Ganso e o Feijão | ❌ |
 | Copiando Formas | ✔️ |
 | Desenho na Malha | ✔️ |
-| Doces ou Travessuras | ❌ |
+| Doces ou Travessuras | ✔️ |
 | Dominó das Frações | ❌ |
 | Labirinto | ✔️ |
 | Peça Quebrada | ❌ |
