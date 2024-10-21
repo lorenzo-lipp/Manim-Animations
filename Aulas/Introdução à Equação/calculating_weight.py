@@ -33,14 +33,14 @@ class CalculatingWeight(Scene):
         ).arrange(RIGHT, buff=0.5)
 
         self.play(FadeIn(equation))
-        self.wait(1)
+        self.wait(2.5)
         self.play(
             equation[2].animate.set_opacity(0),
             FadeIn(grams_1),
             equation[4].animate.set_opacity(0),
             FadeIn(grams_2),
         )
-        self.wait(1)
+        self.wait(2.5)
         self.play(
             FadeOut(equation[2:]),
             FadeOut(grams_1),
@@ -49,5 +49,6 @@ class CalculatingWeight(Scene):
             Transform(equation[0], result[0]),
             Transform(equation[1], result[1])
         )
+        self.wait(1.5)
         self.play(FadeOut(Group(*self.mobjects)))
         self.remove(*self.mobjects)

@@ -17,7 +17,6 @@ class LemonWeight(Scene):
         lemon.shift(10 * UP + 0.5 * LEFT)
 
         self.play(shift_from_left(eletronic_balance))
-        self.wait(1)
         self.play(
             lemon.animate.shift(8.75 * DOWN), 
             rate_func=rate_functions.ease_out_circ, 

@@ -29,23 +29,23 @@ class ComparingWeight(Scene):
             rate_func=rate_functions.ease_out_circ, 
             run_time=0.7
         )
-        self.wait(0.5)
+        self.wait(1)
         self.play(
             plates_balance.set_weights(200, 100),
-            apple.animate.shift(1.3 * DOWN + 0.18 * RIGHT),
+            apple.animate.shift(1.5 * DOWN + 0.25 * RIGHT),
             lemon.animate.shift(1.3 * UP + 0.18 * LEFT)
         )
-        self.wait(2)
+        self.wait(3.5)
         self.play(
             lemon_copy.move_to(lemon).animate.shift(0.5 * RIGHT),
             lemon.animate.shift(LEFT)
         )
         self.play(
             plates_balance.set_weights(0, 0),
-            apple.animate.shift(1.3 * UP + 0.18 * LEFT),
+            apple.animate.shift(1.3 * UP + 0.25 * LEFT),
             lemon_copy.animate.shift(1.3 * DOWN + 0.18 * RIGHT),
             lemon.animate.shift(1.3 * DOWN + 0.18 * RIGHT)
         )
-        self.wait(1)
+        self.wait(3)
         self.play(shift_to_left(*self.mobjects, dist=10))
         self.remove(*self.mobjects)

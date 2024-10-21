@@ -21,8 +21,13 @@ class GrapesWeight(Scene):
         grapes = Grapes()
         grapes.scale(0.65)
         grapes.shift(10 * UP + 3 * LEFT)
-        question_mark = Tex("?", color=ORANGE_COLOR)
-        question_mark.scale(6)
+        question_tracker = ValueTracker(0)
+        question_mark = always_redraw(lambda: 
+            Tex("?", color=ORANGE_COLOR)
+                .scale(6)
+                .shift(question_tracker.get_value() * 6 * RIGHT)
+                .rotate(360 * DEGREES * (1 - question_tracker.get_value()))
+        )
 
         self.play(FadeIn(plates_balance))
         self.remove(plates_balance)
@@ -57,5 +62,5 @@ class GrapesWeight(Scene):
             FadeIn(question_mark)
         )
         self.wait(1)
-        self.play(shift_to_left(question_mark))
+        self.play(question_tracker.animate.set_value(1))
         self.remove(*self.mobjects)
