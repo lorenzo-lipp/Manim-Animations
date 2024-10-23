@@ -57,4 +57,5 @@ class UnknownValue(Scene):
         self.wait(1)
         self.play(Transform(expression_1, expression_4))
         self.wait(1)
+        self.play(FadeOut(Group(*self.mobjects)))
         self.remove(*self.mobjects)

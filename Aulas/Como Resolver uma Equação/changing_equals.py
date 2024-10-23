@@ -28,29 +28,18 @@ class ChangingEquals(Scene):
         expression_5 = MathTex("6 = 6", color=LIGHT_BLUE_COLOR, tex_to_color_map={
             "6": LIGHT_PURPLE_COLOR
         }).scale(3)
-        expression_6 = MathTex("6 . 2 = 6 . 2", color=LIGHT_BLUE_COLOR, tex_to_color_map={
-            "6": LIGHT_PURPLE_COLOR,
-            "2": LIGHT_RED_COLOR
-        }).scale(3)
-        expression_7 = MathTex("12 = 12", color=LIGHT_BLUE_COLOR, tex_to_color_map={
-            "12": LIGHT_PURPLE_COLOR
-        }).scale(3)
 
         self.add(expression_1)
         self.wait(1)
-        self.play(Transform(expression_1, expression_2), run_time=0.7)
-        self.wait(1.5)
-        self.play(Transform(expression_1, expression_3), run_time=0.7)
-        self.wait(1.5)
-        self.play(Transform(expression_1, expression_4), run_time=0.7)
-        self.wait(1.5)
-        self.play(Transform(expression_1, expression_5), run_time=0.7)
-        self.wait(1.5)
-        self.play(Transform(expression_1, expression_6), run_time=0.7)
-        self.wait(1.5)
-        self.play(Transform(expression_1, expression_7), run_time=0.7)
-        self.wait(1.5)
-        self.play(FadeOut(Group(*self.mobjects)))
+        self.play(Transform(expression_1, expression_2), run_time=1)
+        self.wait(2)
+        self.play(Transform(expression_1, expression_3), run_time=1)
+        self.wait(2)
+        self.play(Transform(expression_1, expression_4), run_time=1)
+        self.wait(2)
+        self.play(Transform(expression_1, expression_5), run_time=1)
+        self.wait(2)
+        self.play(FadeOut(Group(*self.mobjects)), run_time=0.7)
         #self.play(Circumscribe(expression_1[0], color=LIGHT_RED_COLOR))
         #self.play(Circumscribe(expression_1[2], color=LIGHT_RED_COLOR))
         self.remove(*self.mobjects)

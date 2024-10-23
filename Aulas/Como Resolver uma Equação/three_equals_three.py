@@ -9,9 +9,11 @@ class ThreeEqualsThree(Scene):
     def construct(self):
         self.camera.background_color = BACKGROUND_COLOR
 
-        expression = MathTex("3 = 3", color=LIGHT_BLUE_COLOR, tex_to_color_map={
-            "3": ORANGE_COLOR
-        })
+        expression = MathTex(
+            "3 = 3", 
+            color=LIGHT_BLUE_COLOR, 
+            tex_to_color_map={"3": ORANGE_COLOR}
+        )
         expression.scale(3)
 
         self.play(Write(expression))
