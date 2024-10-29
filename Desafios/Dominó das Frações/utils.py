@@ -40,6 +40,9 @@ def GeogebraLink(title, img, link, scale=0.8):
     return group
 
 def Board():
+    """ 
+        Returns a `~.VGroup` with the domino board
+    """
     return VGroup(
                 VGroup(
                     VGroup(
@@ -74,6 +77,9 @@ def Board():
             ).arrange(DOWN, 0.3)
 
 def TopPieces():
+    """ 
+        Returns a `~.VGroup` with the top domino pieces
+    """
     return VGroup(
                 VGroup(
                     RoundedRectangle(0.4, width=1.5, height=3, color=BLACK, fill_color="#fefcef", fill_opacity=1),
@@ -134,6 +140,9 @@ def TopPieces():
             ).arrange(RIGHT, 0.5)
 
 def BottomPieces():
+    """ 
+        Returns a `~.VGroup` with the bottom domino pieces
+    """
     last_piece_colors = [LIGHT_GREEN_COLOR, LIGHT_GREEN_COLOR, WHITE, WHITE, LIGHT_GREEN_COLOR, LIGHT_GREEN_COLOR, WHITE, LIGHT_GREEN_COLOR, LIGHT_GREEN_COLOR, WHITE]
     
     return VGroup(
@@ -185,3 +194,10 @@ def BottomPieces():
                     ).shift(0.7 * UP)
                 ),
             ).arrange(RIGHT, 0.5)
+
+def bring_to_forward(scene, *mobjects):
+    """ 
+        Remove mobjects and add again to the scene
+    """
+    scene.remove(*mobjects)
+    scene.add(*mobjects)
