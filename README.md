@@ -2,6 +2,7 @@
 
 | Nome | Finalizado |
 |------|-----------|
+| Classificação de Frações | ❌ |
 | Como Resolver uma Equação | ❌ |
 | Divisores | ✔️ |
 | Frações Equivalentes | ✔️ |
@@ -13,9 +14,11 @@
 | Medidas de Comprimento | ➖ |
 | Medidas de Tempo | ➖ |
 | Moda e Mediana | ➖ |
+| Números Mistos | ➖ |
 | Números Primos | ✔️ |
 | O que é Ângulo | ➖ |
 | O que é Fração | ✔️ |
+| O que é Razão | ➖ |
 | O que são Polígonos | ✔️ |
 | Perímetro | ✔️ |
 | Plano Cartesiano | ➖ |

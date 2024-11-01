@@ -1,0 +1,39 @@
+from manim import *
+from utils import *
+
+config.frame_size = 1080, 1920 
+config.frame_width = 9
+config.frame_height = 16
+
+class Introduction(Scene):
+    def construct(self):
+        self.camera.background_color = BACKGROUND_COLOR
+
+        title = VGroup(
+            Tex("Classificação de", color=LIGHT_BLUE_COLOR).scale(2),
+            Tex("Frações", color=LIGHT_PURPLE_COLOR).scale(2),
+        ).arrange(DOWN, buff=0.4)
+        fraction_1 = MathTex(r"\frac{1}{4}", color=LIGHT_RED_COLOR)
+        fraction_1.scale(1.8)
+        fraction_1.shift(2 * DOWN + 2.5 * LEFT)
+        fraction_2 = MathTex(r"\frac{6}{6}", color=LIGHT_RED_COLOR)
+        fraction_2.scale(1.8)
+        fraction_2.shift(2.7 * UP + 2.5 * RIGHT)
+        fraction_3 = MathTex(r"\frac{7}{3}", color=LIGHT_RED_COLOR)
+        fraction_3.scale(1.8)
+        fraction_3.shift(2.7 * UP + 2.5 * LEFT)
+        fraction_4 = MathTex(r"\frac{8}{4}", color=LIGHT_RED_COLOR)
+        fraction_4.scale(1.8)
+        fraction_4.shift(2 * DOWN + 2.5 * RIGHT)
+
+        self.play(Write(title))
+        self.wait(1)
+        self.play(LaggedStart(
+            SpinInFromNothing(fraction_1),
+            SpinInFromNothing(fraction_2),
+            SpinInFromNothing(fraction_3),
+            SpinInFromNothing(fraction_4),
+            lag_ratio=0.5
+        ))
+        self.play(shift_to_left(*self.mobjects))
+        self.remove(*self.mobjects)
