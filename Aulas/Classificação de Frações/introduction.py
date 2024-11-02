@@ -33,7 +33,8 @@ class Introduction(Scene):
             SpinInFromNothing(fraction_2),
             SpinInFromNothing(fraction_3),
             SpinInFromNothing(fraction_4),
-            lag_ratio=0.5
+            lag_ratio=0.35
         ))
+        self.wait(1)
         self.play(shift_to_left(*self.mobjects))
         self.remove(*self.mobjects)

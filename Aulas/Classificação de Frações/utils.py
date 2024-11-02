@@ -51,6 +51,7 @@ class Pepperonni(VGroup):
 
 class GeogebraLink(Group):
     """ A `Group` with a title, an image and a link arranged vertically """
+
     def __init__(self, title, img, link, text_scale=1.2, img_scale=0.8):
         text = Tex(r"\textbf{" + title + "}", color=DARK_BLUE_COLOR)
         text.scale(text_scale)
@@ -78,3 +79,43 @@ def shift_from_left(*mobjects, dist=9):
         mobject.shift(dist * RIGHT).animate.shift(dist * LEFT) 
         for mobject in mobjects
     ])
+
+class Julia(ImageMobject):
+    """ A character `ImageMobject` """
+
+    def __init__(self):
+        super().__init__("./assets/júlia.png")
+        self.scale(0.8)
+
+class Augusto(ImageMobject):
+    """ A character `ImageMobject` """
+
+    def __init__(self):
+        super().__init__("./assets/augusto.png")
+        self.scale(0.8)
+
+class Pietro(ImageMobject):
+    """ A character `ImageMobject` """
+
+    def __init__(self):
+        super().__init__("./assets/pietro.png")
+        self.scale(0.8)
+
+class VGroupIntersection(VGroup):
+    """ 
+    An `Intersection` that works for `VGroup` and keeps the style.
+
+    Can be used to cut a `VGroup` as a mask.
+    """
+
+    def __init__(self, vgroup, cut_vmobj):
+        super().__init__()
+
+        self._cut_vmobjects(vgroup, cut_vmobj)
+
+    def _cut_vmobjects(self, vgroup, cut_vmobj):
+        for vmobj in vgroup:
+            if isinstance(vmobj, VGroup):
+                self.add(VGroupIntersection(vmobj, cut_vmobj))
+            else:
+                self.add(Intersection(vmobj, cut_vmobj).match_style(vmobj))
