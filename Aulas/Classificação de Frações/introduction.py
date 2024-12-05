@@ -26,15 +26,14 @@ class Introduction(Scene):
         fraction_4.scale(1.8)
         fraction_4.shift(2 * DOWN + 2.5 * RIGHT)
 
-        self.play(Write(title))
-        self.wait(1)
+        self.play(Write(title), run_time=0.7)
         self.play(LaggedStart(
             SpinInFromNothing(fraction_1),
             SpinInFromNothing(fraction_2),
             SpinInFromNothing(fraction_3),
             SpinInFromNothing(fraction_4),
-            lag_ratio=0.35
+            lag_ratio=0.18
         ))
-        self.wait(1)
+        self.wait(0.5)
         self.play(shift_to_left(*self.mobjects))
         self.remove(*self.mobjects)

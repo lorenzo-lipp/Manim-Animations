@@ -101,10 +101,6 @@ class ThirdPizza(Scene):
             Write(fraction)
         )
         self.wait(1)
-        self.play(Indicate(fraction[0][0], color=LIGHT_ORANGE_COLOR))
-        self.wait(0.5)
-        self.play(Indicate(fraction[0][2], color=LIGHT_ORANGE_COLOR))
-        self.wait(1)
         self.play(
             LaggedStart(
                 fraction.animate.shift(3.5 * LEFT),
@@ -112,8 +108,12 @@ class ThirdPizza(Scene):
                 lag_ratio=0.5
             )
         )
-        self.wait(1)
+        self.wait(0.5)
         self.play(Circumscribe(classification[1], color=LIGHT_PURPLE_COLOR))
-        self.wait(2)
-        self.play(FadeOut(*self.mobjects))
+        self.wait(1)
+        self.play(Indicate(fraction[0][0], color=LIGHT_ORANGE_COLOR))
+        self.wait(0.5)
+        self.play(Indicate(fraction[0][2], color=LIGHT_ORANGE_COLOR))
+        self.wait(1.5)
+        self.play(FadeOut(*self.mobjects), run_time=0.5)
         self.remove(*self.mobjects)

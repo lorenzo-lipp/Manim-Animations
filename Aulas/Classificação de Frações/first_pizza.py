@@ -57,7 +57,7 @@ class FirstPizza(Scene):
             dr_slice.animate.shift(0.05 * DR),
             dl_slice.animate.shift(0.05 * DL)
         )
-        self.wait(0.5)
+        self.wait(3)
         self.play(
             dr_slice.animate.shift(9 * RIGHT),
             dl_slice.animate.shift(9 * RIGHT)
@@ -80,20 +80,19 @@ class FirstPizza(Scene):
             ul_slice.animate.shift(0.75 * UP),
             Write(fraction)
         )
-        self.wait(1)
-        self.play(Indicate(fraction[0][0], color=LIGHT_ORANGE_COLOR))
-        self.wait(0.5)
-        self.play(Indicate(fraction[0][2], color=LIGHT_ORANGE_COLOR))
-        self.wait(1)
+        self.wait(3)
         self.play(
             LaggedStart(
                 fraction.animate.shift(2.9 * LEFT),
-                Write(classification),
+                Write(classification, run_time=0.7),
                 lag_ratio=0.5
             )
         )
-        self.wait(1)
         self.play(Circumscribe(classification[1], color=LIGHT_PURPLE_COLOR))
+        self.wait(0.5)
+        self.play(Indicate(fraction[0][0], color=LIGHT_ORANGE_COLOR))
+        self.wait(0.5)
+        self.play(Indicate(fraction[0][2], color=LIGHT_ORANGE_COLOR))
         self.wait(2)
         self.play(FadeOut(*self.mobjects))
         self.remove(*self.mobjects)
