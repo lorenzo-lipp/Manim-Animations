@@ -19,7 +19,7 @@ class Presentation(Scene):
         beans = Beans()
         beans.shift(1 * LEFT + 2.3 * DOWN)
 
-        self.add(background, farmer, fox, goose, beans)
+        self.play(FadeIn(Group(background, farmer, fox, goose, beans)))
         self.wait(1)
         self.play(fox.animate.shift(1.8 * RIGHT + 0.5 * UP))
         self.wait(0.5)
