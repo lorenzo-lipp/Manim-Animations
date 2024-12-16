@@ -12,6 +12,6 @@ class Geogebra(Scene):
         group1 = GeogebraLink(title="Peça Quebrada", img="peca-quebrada", link="qcm-quebrada", scale=0.8)
 
         self.play(group1.animate.shift(9 * LEFT), run_time=0.7)
-        self.wait(2.5)
+        self.wait(4)
         self.play(group1.animate.shift(9 * LEFT), run_time=0.7)
         self.remove(*self.mobjects)
