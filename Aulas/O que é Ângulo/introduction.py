@@ -17,9 +17,9 @@ class Introduction(Scene):
         )
         title.arrange(DOWN, buff=0.4)
 
-        self.play(Write(title), run_time=1.2)
+        self.play(Write(title), run_time=0.7)
         self.wait(1.5)
-        self.play(FadeOut(title))
+        self.play(FadeOut(title), run_time=0.5)
 
         angle_color = BLACK
         fixed_left_point = 2 * LEFT + 2 * DOWN

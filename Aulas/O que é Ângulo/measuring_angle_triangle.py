@@ -31,8 +31,8 @@ class MeasuringAngleTriangle(Scene):
             )
         )
 
-        self.play(AnimateFromLeft(triangle))
-        self.wait(1)        
+        self.play(AnimateFromLeft(triangle), run_time=0.7)
+        self.wait(0.8)        
         self.play(protractor.animate.move_to(2.59 * RIGHT + 0.87 * DOWN))
         self.play(FadeIn(bottom_line))
         self.add(movable_line, lines_angle)

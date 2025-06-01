@@ -33,7 +33,6 @@ class MeasuringAngleSquare(Scene):
         right_angle.move_to(fixed_left_point, aligned_edge=DL)
 
         self.play(AnimateFromLeft(square))
-        self.wait(1)        
         self.play(protractor.animate.move_to(2 * LEFT + 0.87 * DOWN))
         self.play(FadeIn(bottom_line))
         self.add(movable_line, lines_angle)
@@ -63,5 +62,5 @@ class MeasuringAngleSquare(Scene):
             run_time=1
         )
         self.wait(1)
-        self.play(Group(*self.mobjects).animate.shift(14 * LEFT))
+        self.play(FadeOut(Group(*self.mobjects)), run_time=0.5)
         self.remove(*self.mobjects)
