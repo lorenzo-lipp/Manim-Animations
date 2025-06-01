@@ -32,10 +32,12 @@ class MeasuringUnits(Scene):
             ).scale(2).arrange(RIGHT, buff=0.2),
         ).arrange(DOWN, buff=1.2)
 
-        for text in units:
-            self.play(Write(text))
-            self.wait(0.5)
-
+        self.play(
+            LaggedStart(
+                *[Write(text) for text in units],
+                lag_ratio=0.8
+            )
+        )
         self.wait(1)
         self.play(FadeOut(Group(*self.mobjects)))
         self.remove(*self.mobjects)

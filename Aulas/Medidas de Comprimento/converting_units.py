@@ -38,7 +38,7 @@ class ConvertingUnits(Scene):
         ).arrange(DOWN, buff=0)
         table.scale(1.4)
 
-        self.play(AnimateFromRight(table))
+        self.play(AnimateFromLeft(table))
         self.wait(1)
         self.play(
             LaggedStart(
@@ -52,17 +52,6 @@ class ConvertingUnits(Scene):
         self.play(Transform(table[0][0][1], MathTex("1", color=BLACK).scale(1.4).move_to(table[0][0][1])))
         self.play(Indicate(table[0], scale_factor=1.05, color=LIGHT_RED_COLOR))
         self.wait(0.8)
-        self.play(
-            Circumscribe(Group(table[3][0][1], table[0][0][1]), time_width=1, color=LIGHT_BLUE_COLOR, run_time=4),
-            *[
-                Indicate(table[i][0][1], scale_factor=1, color=LIGHT_BLUE_COLOR, run_time=4)
-                for i in range(4)
-            ],
-            *[
-                FadeOutAndBack(table[i], run_time=4)
-                for i in range(4, 7)
-            ],
-        )
 
         convertion_text = MathTex(
             "1 km = 1000 m", 
@@ -70,15 +59,36 @@ class ConvertingUnits(Scene):
             color=BLACK
         ).scale(1.5).move_to(table, DOWN).shift(DOWN)
 
-        self.play(Write(convertion_text))
-        self.wait(1)
-        self.play(FadeOut(convertion_text))
+        self.play(
+            Circumscribe(Group(table[3][0][1], table[0][0][1]), time_width=1, color=LIGHT_BLUE_COLOR, run_time=4),
+            *[
+                Indicate(table[i][0][1], scale_factor=1, color=LIGHT_BLUE_COLOR, run_time=4)
+                for i in range(4)
+            ],
+            LaggedStart(
+                AnimationGroup(*[
+                    FadeOutAndBack(table[i], run_time=4)
+                    for i in range(4, 7)
+                ]),
+                Write(convertion_text),
+                lag_ratio=0.3
+            )
+        )
+        self.wait(0.5)
+        self.play(FadeOut(convertion_text), run_time=0.5)
         self.play(
             Transform(table[0][0][1], MathTex("0", color=BLACK).scale(1.4).move_to(table[0][0][1])),
             Transform(table[3][0][1], MathTex("1", color=BLACK).scale(1.4).move_to(table[3][0][1]))
         )
         self.play(Indicate(table[3], scale_factor=1.05, color=LIGHT_BLUE_COLOR))
         self.wait(0.5)
+
+        convertion_text = MathTex(
+            "1 m = 100 cm", 
+            tex_to_color_map={"1 m": LIGHT_BLUE_COLOR, "100 cm": LIGHT_PURPLE_COLOR}, 
+            color=BLACK
+        ).scale(1.5).move_to(table, DOWN).shift(DOWN)
+
         self.play(
             Circumscribe(Group(table[5][0][1], table[3][0][1]), time_width=1, color=LIGHT_PURPLE_COLOR, run_time=4),
             *[
@@ -89,72 +99,42 @@ class ConvertingUnits(Scene):
                 FadeOutAndBack(table[i], run_time=4)
                 for i in range(0, 3)
             ],
-            FadeOutAndBack(table[6], run_time=4)
+            LaggedStart(
+                FadeOutAndBack(table[6], run_time=4),
+                Write(convertion_text),
+                lag_ratio=0.3
+            )
         )
-
-        convertion_text = MathTex(
-            "1 m = 100 cm", 
-            tex_to_color_map={"1 m": LIGHT_BLUE_COLOR, "100 cm": LIGHT_PURPLE_COLOR}, 
-            color=BLACK
-        ).scale(1.5).move_to(table, DOWN).shift(DOWN)
-
-        self.play(Write(convertion_text))
-        self.wait(1)
-        self.play(FadeOut(convertion_text))
+        self.wait(0.5)
+        self.play(FadeOut(convertion_text), run_time=0.5)
         self.play(
             Transform(table[3][0][1], MathTex("0", color=BLACK).scale(1.4).move_to(table[3][0][1])),
             Transform(table[5][0][1], MathTex("1", color=BLACK).scale(1.4).move_to(table[5][0][1]))
         )
         self.play(Indicate(table[5], scale_factor=1.05, color=LIGHT_PURPLE_COLOR))
-        self.play(
-            Circumscribe(Group(table[6][0][1], table[5][0][1]), time_width=1, color=LIGHT_GREEN_COLOR, run_time=4),
-            *[
-                Indicate(table[i][0][1], scale_factor=1, color=LIGHT_GREEN_COLOR, run_time=4)
-                for i in range(5, 7)
-            ],
-            *[
-                FadeOutAndBack(table[i], run_time=4)
-                for i in range(0, 5)
-            ],
-        )
-        
+
         convertion_text = MathTex(
             "1 cm = 10 mm", 
             tex_to_color_map={"1 cm": LIGHT_PURPLE_COLOR, "10 mm": LIGHT_GREEN_COLOR}, 
             color=BLACK
         ).scale(1.5).move_to(table, DOWN).shift(DOWN)
 
-        self.play(Write(convertion_text))
-        self.wait(1)
-        self.play(FadeOut(convertion_text))
         self.play(
-            Transform(table[5][0][1], MathTex("0", color=BLACK).scale(1.4).move_to(table[5][0][1])),
-            Transform(table[6][0][1], MathTex("1", color=BLACK).scale(1.4).move_to(table[6][0][1]))
-        )
-        self.play(
-            Indicate(table[6], scale_factor=1.05, color=LIGHT_GREEN_COLOR),
-            Transform(table[5][0][1], MathTex("0,", color=BLACK).scale(1.4).move_to(table[5][0][1]))
-        )
-        self.play(
-            Circumscribe(Group(table[6][0][1], table[5][0][1]), time_width=1, color=LIGHT_PURPLE_COLOR, run_time=4),
+            Circumscribe(Group(table[6][0][1], table[5][0][1]), time_width=1, color=LIGHT_GREEN_COLOR, run_time=4),
             *[
-                Indicate(table[i][0][1], scale_factor=1, color=LIGHT_PURPLE_COLOR, run_time=4)
+                Indicate(table[i][0][1], scale_factor=1, color=LIGHT_GREEN_COLOR, run_time=4)
                 for i in range(5, 7)
             ],
-            *[
-                FadeOutAndBack(table[i], run_time=4)
-                for i in range(0, 5)
-            ],
+            LaggedStart(
+                AnimationGroup(*[
+                    FadeOutAndBack(table[i], run_time=4)
+                    for i in range(0, 5)
+                ]),
+                Write(convertion_text),
+                lag_ratio=0.3
+            )
         )
-        
-        convertion_text = MathTex(
-            "1 mm = 0.1 cm", 
-            tex_to_color_map={"1 mm": LIGHT_GREEN_COLOR, "0.1 cm": LIGHT_GREEN_COLOR}, 
-            color=BLACK
-        ).scale(1.5).move_to(table, DOWN).shift(DOWN)
-
-        self.play(Write(convertion_text))
-        self.wait(1)
-        self.play(FadeOut(convertion_text))
+        self.wait(0.5)
+        self.play(FadeOut(convertion_text), run_time=0.5)
         self.play(AnimateToLeft(Group(*self.mobjects)))
         self.remove(*self.mobjects)

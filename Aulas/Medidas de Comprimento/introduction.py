@@ -23,11 +23,14 @@ class Introduction(Scene):
         measuring_tape.scale(2)
         measuring_tape.shift(2 * UP)
 
-        self.play(Write(title), run_time=1.2)
-        self.play(SpinInFromNothing(ruler))
-        self.play(AnimateFromRight(measuring_tape))
+        self.play(LaggedStart(
+            Write(title),
+            SpinInFromNothing(ruler),
+            AnimateFromRight(measuring_tape),
+            lag_ratio=0.3
+        ))
         self.wait(0.5)
         self.play(measuring_tape.moving_part.animate.shift(4.6 * LEFT))
-        self.wait(1)
+        self.wait(0.5)
         self.play(AnimateToLeft(Group(*self.mobjects)), run_time=0.7)
         self.remove(*self.mobjects)

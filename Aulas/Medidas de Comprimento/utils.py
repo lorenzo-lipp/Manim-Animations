@@ -33,6 +33,18 @@ class GeogebraLink(Group):
         self.arrange(DOWN, buff=0.5)
         self.shift(9 * RIGHT)
 
+class LogoLink(Group):
+    """ A :class:`Group` with a svg image and a link arranged vertically. """
+    def __init__(self, img_scale=1):
+        img = SVGMobject(file_name="../assets/logo-simbolo.svg", stroke_color=TEXT_COLOR, height=5, fill_opacity=0.9)
+        img.scale(img_scale)
+        link = Tex(r"\textbf{Link: bit.ly/portal-qcm}", color=DARK_BLUE_COLOR)   
+        link[0][0:5].set(color=BLACK)
+
+        super().__init__(img, link)
+        self.arrange(DOWN, buff=0.5)
+        self.shift(9 * RIGHT)
+
 def AnimateFromLeft(*mobjects):
     return Group(*mobjects).shift(9 * RIGHT).animate.shift(9 * LEFT)
 
