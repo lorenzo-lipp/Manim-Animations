@@ -177,8 +177,8 @@ class UnitsTableLeftArrow(VGroup):
                 color=UNITS[from_index][2],
             ).add_tip(tip_shape=ArrowTriangleFilledTip, tip_width=0.28),
             Tex(f"x {10 ** (to_index - from_index)}", color=UNITS[from_index][2])
-                .move_to(table[from_index].get_left() + (1 + (to_index - from_index) / 7) * LEFT + (0.3 + 0.4 * (to_index - from_index - 1)) * DOWN)
-                .scale(0.8)
+                .move_to(table[from_index].get_left() + (1 + (to_index - from_index) / 8) * LEFT + (0.3 + 0.4 * (to_index - from_index - 1)) * DOWN)
+                .scale(0.9 - (to_index - from_index) / 10)
         )
 
 class UnitsTableRightArrow(VGroup):
@@ -190,8 +190,8 @@ class UnitsTableRightArrow(VGroup):
                 color=UNITS[from_index][2],
             ).add_tip(tip_shape=ArrowTriangleFilledTip, tip_width=0.28),
             Tex(f"$\\div$ {10 ** (from_index - to_index)}", color=UNITS[from_index][2])
-                .move_to(table[to_index].get_right() + (1 + (from_index - to_index) / 7) * RIGHT + (0.2 + 0.4 * (from_index - to_index)) * DOWN)
-                .scale(0.8)
+                .move_to(table[to_index].get_right() + (1 + (from_index - to_index) / 8) * RIGHT + (0.2 + 0.4 * (from_index - to_index)) * DOWN)
+                .scale(0.9 - (from_index - to_index) / 10)
         )
 
 class UnitsTableLeftArrows(VGroup):
@@ -205,3 +205,8 @@ class UnitsTableRightArrows(VGroup):
         super().__init__(
             *[UnitsTableRightArrow(table, i + 1, i) for i in range(len(table) - 1)]
         )
+
+def time_convert(editor_code_time):
+    int_part = int(editor_code_time)
+    float_part = editor_code_time - int_part
+    return int_part + (float_part * 100 / 60)
