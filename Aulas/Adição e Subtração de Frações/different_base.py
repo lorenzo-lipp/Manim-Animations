@@ -41,10 +41,20 @@ class DifferentBase(Scene):
         mcm_result.scale(1.5)
         mcm_result.shift(2 * DOWN + 2 * RIGHT)
 
-        for line in mcm: self.play(Write(line))
-        self.play(TransformFromCopy(mcm[0][0][-1], mcm_result[0][0]))
-        self.play(TransformFromCopy(mcm[1][0][-1], mcm_result[0][2]))
-        self.play(TransformFromCopy(mcm[2][0][-1], mcm_result[0][4]))
+        self.play(
+            LaggedStart(
+                *[Write(line, run_time=0.7) for line in mcm],
+                lag_ratio=0.3
+            )
+        )
+        self.play(
+            LaggedStart(
+                TransformFromCopy(mcm[0][0][-1], mcm_result[0][0]),
+                TransformFromCopy(mcm[1][0][-1], mcm_result[0][2]),
+                TransformFromCopy(mcm[2][0][-1], mcm_result[0][4]),
+                lag_ratio=0.5
+            )
+        )
         self.play(*[Write(mcm_result[0][i]) for i in range(1, len(mcm_result[0])) if i not in [0, 2, 4]])
         self.wait(1)
         self.play(
@@ -82,7 +92,6 @@ class DifferentBase(Scene):
             Transform(frac[0][0], MatchingMathTex(r"15", frac[0][0], color=LIGHT_BLUE_COLOR)),
             Transform(frac[0][2], MatchingMathTex(r"20", frac[0][2], color=LIGHT_BLUE_COLOR))
         )
-        self.wait(1)
         self.play(FadeIn(Group(mult_second, div_second), run_time=0.5))
         self.play(
             Indicate(mult_second, color=LIGHT_RED_COLOR, scale_factor=1.2),
@@ -93,7 +102,6 @@ class DifferentBase(Scene):
             Transform(frac[2][0], MatchingMathTex(r"2", frac[2][0], color=LIGHT_PURPLE_COLOR)),
             Transform(frac[2][2:4], MatchingMathTex(r"20", frac[2][2:4], color=LIGHT_PURPLE_COLOR))
         )
-        self.wait(1)
         self.play(Transform(frac[3][3], MatchingMathTex("20", frac[3][3], color=LIGHT_GREEN_COLOR)))
         self.wait(1)
         self.play(Transform(frac[3][1], MatchingMathTex("17", frac[3][1], color=LIGHT_GREEN_COLOR)))
