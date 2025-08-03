@@ -62,6 +62,14 @@ class RectangleArea(Scene):
         self.wait(1)
         self.play(FadeOut(square_gp))
 
+        text_six = Tex("6", color=LIGHT_BLUE_COLOR)
+        text_six.scale(1.5)
+        text_six.move_to(square)
+
+        self.play(FadeIn(text_six, run_time=0.5))
+        self.play(Indicate(text_six, color=LIGHT_BLUE_COLOR))
+        self.play(FadeOut(text_six, run_time=0.5))
+
         formula = Tex("Área = Base x Altura", color=LIGHT_PURPLE_COLOR)
         formula.scale(1.2)
         formula.shift((SHIFT_DIST - 0.5) * DOWN)
@@ -116,33 +124,6 @@ class RectangleArea(Scene):
         self.remove(self.mobjects[-1][0])
         self.play(FadeOut(height_line), run_time=0.7)
         self.play(TransformFromCopy(formula_solving, formula_result), run_time=0.7)
-        self.wait(1)
-        self.play(
-            Transform(rectangle, new_rectangle),
-            Transform(rectangle_height_text, new_rectangle_height_text),
-        )
-        self.play(
-            Transform(formula_height, Tex("3m", color=LIGHT_GREEN_COLOR).scale(1.2).move_to(formula_height)),
-            Transform(formula_result[1][0], SingleStringMathTex("9", color=LIGHT_GREEN_COLOR).scale(1.2).move_to(formula_result[1][0])),
-            run_time=0.7
-        )
-        self.play(
-            Indicate(formula_height, color=LIGHT_RED_COLOR),
-            Indicate(formula_result[1], color=LIGHT_RED_COLOR)
-        )
-        self.play(
-            LaggedStart(
-                *[
-                    SpinInFromNothing(
-                        Square(1, fill_opacity=0, color=LIGHT_GREEN_COLOR)
-                            .move_to(square)
-                            .shift(square_pos(3, i)
-                        ),
-                        run_time=0.7
-                    ) for i in range(6, 9)
-                ],
-                lag_ratio=0.6
-            )
-        )
-        self.play(AnimateToLeft(*self.mobjects))
+        self.wait(3)
+        self.play(FadeOut(*self.mobjects[6:]))
         self.remove(*self.mobjects)
