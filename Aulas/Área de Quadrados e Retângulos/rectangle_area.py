@@ -33,7 +33,7 @@ class RectangleArea(Scene):
                 lag_ratio=0.3
             )
         )
-        self.wait(0.5)
+        self.wait(1.2)
         self.play(
             LaggedStart(
                 square_gp.animate.shift(SHIFT_DIST * DOWN),
@@ -43,7 +43,7 @@ class RectangleArea(Scene):
                 lag_ratio=0.3
             )
         )
-        self.wait(1)
+        self.wait(1.6)
         self.play(
             LaggedStart(
                 *[
@@ -59,7 +59,6 @@ class RectangleArea(Scene):
                 lag_ratio=0.8
             )
         )
-        self.wait(1)
         self.play(FadeOut(square_gp))
 
         text_six = Tex("6", color=LIGHT_BLUE_COLOR)
@@ -124,6 +123,6 @@ class RectangleArea(Scene):
         self.remove(self.mobjects[-1][0])
         self.play(FadeOut(height_line), run_time=0.7)
         self.play(TransformFromCopy(formula_solving, formula_result), run_time=0.7)
-        self.wait(3)
+        self.wait(2)
         self.play(FadeOut(*self.mobjects[6:]))
         self.remove(*self.mobjects)
