@@ -26,7 +26,7 @@ class TriangleArea(Scene):
                 lag_ratio=0.3
             )
         )
-        self.wait(1.6)
+        self.wait(0.9)
 
         formula = Tex("Área = Base x Altura", color=LIGHT_PURPLE_COLOR)
         formula.scale(1.2)
@@ -36,7 +36,7 @@ class TriangleArea(Scene):
         formula_bottom.shift((SHIFT_DIST) * DOWN + RIGHT)
 
         self.play(Write(formula))
-        self.wait(0.5)
+        self.wait(1.2)
 
         rectangle_div = Line(
             [rectangle.get_right()[0], rectangle.get_top()[1], 0],
@@ -103,13 +103,13 @@ class TriangleArea(Scene):
                 formula_bottom
         ).copy()
         
-        self.play(formula_solving.animate.shift(2 * DOWN))
+        self.play(formula_solving.animate.shift(2 * DOWN), run_time=0.7)
         self.play(
             LaggedStart(
                 triangle_base_text.copy().animate.scale(1.2).move_to(formula_solving[0][0][6:10].get_center()),
                 Transform(formula_solving[0][0][6:10], triangle_base_text.copy().scale(1.2).move_to(formula_solving[0][0][6:10].get_center())),
                 lag_ratio=0.3,
-                run_time=1
+                run_time=0.7
             )
         )
         self.wait(1)
@@ -118,7 +118,7 @@ class TriangleArea(Scene):
                 triangle_height_text.copy().animate.scale(1.2).move_to(formula_solving[0][0][11:].get_center()),
                 Transform(formula_solving[0][0][11:], triangle_height_text.copy().scale(1.2).move_to(formula_solving[0][0][11:].get_center())),
                 lag_ratio=0.3,
-                run_time=1
+                run_time=0.7
             )
         )
         self.wait(1)
@@ -127,7 +127,7 @@ class TriangleArea(Scene):
         formula_result.scale(1.2)
         formula_result.shift((SHIFT_DIST + 3) * DOWN)
 
-        self.play(Write(formula_result))
+        self.play(Write(formula_result), run_time=0.7)
         self.wait(1)
         self.play(FadeOut(Group(*self.mobjects)))
         self.remove(*self.mobjects)

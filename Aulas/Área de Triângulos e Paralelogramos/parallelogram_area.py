@@ -86,32 +86,30 @@ class ParallelogramArea(Scene):
         )
 
         self.play(Write(formula))
-        self.wait(0.5)
-        self.play(TransformFromCopy(formula, formula_solving))
+        self.play(TransformFromCopy(formula, formula_solving), run_time=0.7)
         self.play(FadeIn(width_line), run_time=0.7)
-        self.play(Indicate(width_line, color=LIGHT_RED_COLOR))
+        self.play(Indicate(width_line, color=LIGHT_RED_COLOR), run_time=0.7)
         self.play(
             LaggedStart(
                 parallelogram_base_text.copy().animate.scale(1.2).move_to(formula_width.get_center()),
                 Transform(formula_width, parallelogram_base_text.copy().scale(1.2).move_to(formula_width.get_center())),
                 lag_ratio=0.3,
-                run_time=1
+                run_time=0.7
             )
         )
         self.play(FadeOut(width_line), run_time=0.7)
         self.play(FadeIn(height_line), run_time=0.7)
-        self.play(Indicate(height_line, color=LIGHT_RED_COLOR))
+        self.play(Indicate(height_line, color=LIGHT_RED_COLOR), run_time=0.7)
         self.play(
             LaggedStart(
                 parallelogram_div_text.copy().animate.scale(1.2).move_to(formula_height.get_center()),
                 Transform(formula_height, parallelogram_div_text.copy().scale(1.2).move_to(formula_height.get_center())),
                 lag_ratio=0.3,
-                run_time=1
+                run_time=0.7
             )
         )
         self.remove(self.mobjects[-1][0])
         self.play(FadeOut(height_line), run_time=0.7)
-        self.wait(0.5)
         self.play(TransformFromCopy(formula_solving, formula_result), run_time=0.7)
 
         new_rectangle = Polygram(
@@ -138,6 +136,7 @@ class ParallelogramArea(Scene):
         self.remove(parallelogram)
         self.add(new_rectangle, right_triangle)
         self.play(FadeOut(parallelogram_lateral_text))
+        self.wait(0.5)
         self.play(right_triangle.animate.shift(3 * LEFT))
         self.wait(2)
         self.play(FadeOut(Group(*self.mobjects)))
